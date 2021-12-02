@@ -1,0 +1,68 @@
+/* Reglas por defecto (mobile) */
+.header {
+    display: flex;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #f1f1f1;
+}
+
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+  /* Change the link color on hover */
+li a:hover {
+    background-color: #555;
+    color: white;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
+.main__content1 {
+    width: max-content;
+    background-image: url("https://www.apple.com/v/home/ah/images/heroes/iphone-13-pro/hero_iphone_13pro__dhnsegysa42u_small_2x.jpg");
+}
+
+.main__content2 {
+    width: max-content;
+    background-image: url("https://www.apple.com/v/home/ah/images/heroes/iphone-13/hero_iphone_13__f194u1rdooeq_small_2x.jpg");
+}
+
+.footer {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Resto de reglas en orden creciente */
+@media (min-width: 576px) {
+    p {
+        font-size: 14px;
+    }
+}
+@media (min-width: 768px) {
+    p {
+        font-size: 16px;
+    }
+}
+@media (min-width: 992px) {
+    p {
+        font-size: 20px;
+    }
+}
+@media (min-width: 1200px) {
+    p {
+        font-size: 24px;
+    }
+}
