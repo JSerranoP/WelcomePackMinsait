@@ -5,21 +5,33 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="./style.css">
-        <link rel="stylesheet" href="[https://use.fontawesome.com/releases/v5.8.2/css/all.css](https://use.fontawesome.com/releases/v5.8.2/css/all.css)">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     </head>
     <body>
         <header class="header">
-            <div class="header__logo">
-                <span class="fab fa-apple"></span>
-                <i class="fab fa-apple"></i>
-            </div>
-            <nav class="header__bar">
-                <ul class="header__barList">
-                    <li class="header__barItem"><a href="#">Tienda</a></li>
-                    <li class="header__barItem"><a href="#">iPhone</a></li>
-                    <li class="header__barItem"><a href="#">MacBook</a></li>
-                </ul>
-            </nav>
+            <li class="header__icon header__dropdown">
+                <a class="header__icon header__dropbtn" href="#"><i class="fa fa-bars fa-lg"></i></a>
+                <div class="header__dropdown-content">
+                    <a href="#">Tienda</a>
+                    <a href="#">Mac</a>
+                    <a href="#">iPad</a>
+                    <a href="#">iPhone</a>
+                    <a href="#">Watch</a>
+                    <a href="#">AirPods</a>
+                    <a href="#">Tv y Casa</a>
+                    <a href="#">Solo en Apple</a>
+                    <a href="#">Accesorios</a>
+                    <a href="#">Soporte</a>
+                </div>
+            </li>
+            <li class="header__icon">
+                <a class="header__icon" href="#"><span class="fab fa-apple fa-lg"></span></a>
+            </li>
+            <li class="header__icon">
+                <a class="header__icon" href="#"><i class="fas fa-shopping-bag"></i></a>
+            </li>
         </header>
         <div class="main">
             <div class="main__content">
