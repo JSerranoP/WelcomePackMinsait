@@ -3,23 +3,35 @@
     display: flex;
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    background-color: #f1f1f1;
+.header__logo {
+    text-align: center;
 }
 
-li a {
-    display: block;
+.header__bar {
+    display: flex;
+    width: 100%;
+    list-style-type: none;
+    text-decoration: none;
+    text-align: center;
+}
+
+.header__barList {
+    list-style-type: none;
+    width: 100%;
+    background-color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+}
+
+.header__barItem {
+    list-style-type: none;
     color: #000;
     padding: 8px 16px;
     text-decoration: none;
 }
 
   /* Change the link color on hover */
-li a:hover {
+.header__barItem a:hover {
     background-color: #555;
     color: white;
 }
@@ -29,14 +41,98 @@ li a:hover {
     flex-direction: column;
 }
 
-.main__content1 {
-    width: max-content;
+.main__content {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    height: 500px;
+    background-size: cover;
     background-image: url("https://www.apple.com/v/home/ah/images/heroes/iphone-13-pro/hero_iphone_13pro__dhnsegysa42u_small_2x.jpg");
 }
 
-.main__content2 {
-    width: max-content;
+#MainImg2 {
     background-image: url("https://www.apple.com/v/home/ah/images/heroes/iphone-13/hero_iphone_13__f194u1rdooeq_small_2x.jpg");
+}
+
+.main__content-title {
+    margin: 0;
+    text-decoration: none;
+    color: #1d1d1f;
+    font-style: normal;
+    font-size: 32px;
+    line-height: 1.125;
+    font-weight: 600;
+    letter-spacing: .004em;
+    font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+
+#title2 {
+    color: #f5f5f7;
+}
+
+.main__content-subtitle {
+    margin: 4px 0 0 0;
+    text-decoration: none;
+    color: #1d1d1f;
+    font-style: normal;
+    font-size: 19px;
+    line-height: 1.21053;
+    font-weight: 400;
+    letter-spacing: .012em;
+    font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+
+#subtitle2 {
+    color: #fec2eb;
+}
+
+.main__content-link {
+    text-decoration: none;
+    color: #2997ff;
+    font-size: 17px;
+    line-height: 1.23536;
+    font-weight: 400;
+    letter-spacing: -.022em;
+    font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+
+.secondary__content {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    height: 500px;
+    background-size: cover;
+    background-image: url("https://www.apple.com/v/home/ah/images/promos/macbook-pro/tile_macbookpro__cx0ur0qg9biq_small_2x.jpg");
+}
+
+#secondaryImg2{
+    background-image: url("https://www.apple.com/v/home/ah/images/promos/airpods/tile_airpods__fuv6vgn42y2q_small_2x.jpg");
+}
+
+.secondary__content-title {
+    margin: 0;
+    font-style: normal;
+    font-size: 32px;
+    line-height: 1.125;
+    font-weight: 600;
+    letter-spacing: .002em;
+    font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+
+.secondary__content-subtitle {
+    margin: 4px 0 0 0;
+    font-style: normal;
+    font-size: 19px;
+    line-height: 1.21053;
+    font-weight: 400;
+    letter-spacing: .012em;
+    font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
 }
 
 .footer {
@@ -46,11 +142,6 @@ li a:hover {
 }
 
 /* Resto de reglas en orden creciente */
-@media (min-width: 576px) {
-    p {
-        font-size: 14px;
-    }
-}
 @media (min-width: 768px) {
     p {
         font-size: 16px;
