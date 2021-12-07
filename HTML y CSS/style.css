@@ -1,6 +1,7 @@
 /* Reglas por defecto (mobile) */
 .header {
     display: flex;
+    background-color: black;
 }
 
 .header__logo {
@@ -51,10 +52,34 @@
     height: 500px;
     background-size: cover;
     background-image: url("https://www.apple.com/v/home/ah/images/heroes/iphone-13-pro/hero_iphone_13pro__dhnsegysa42u_small_2x.jpg");
+    background-position: center;
+    background-attachment: scroll;
+    margin-bottom: 15px;
 }
 
 #MainImg2 {
     background-image: url("https://www.apple.com/v/home/ah/images/heroes/iphone-13/hero_iphone_13__f194u1rdooeq_small_2x.jpg");
+}
+
+.main__content-centeredTop {
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%, -50%);
+}
+
+.main__content-centered {
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+}
+
+.main__content-centeredBottom {
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, -50%);
 }
 
 .main__content-title {
@@ -90,6 +115,7 @@
 }
 
 .main__content-link {
+    margin-top: 12px;
     text-decoration: none;
     color: #2997ff;
     font-size: 17px;
@@ -109,6 +135,8 @@
     height: 500px;
     background-size: cover;
     background-image: url("https://www.apple.com/v/home/ah/images/promos/macbook-pro/tile_macbookpro__cx0ur0qg9biq_small_2x.jpg");
+    background-position: center;
+    margin-bottom: 15px;
 }
 
 #secondaryImg2{
