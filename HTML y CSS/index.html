@@ -10,28 +10,47 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     </head>
     <body>
-        <header class="header">
-            <li class="header__icon header__dropdown">
-                <a class="header__icon header__dropbtn" href="#"><i class="fa fa-bars fa-lg"></i></a>
-                <div class="header__dropdown-content">
-                    <a href="#">Tienda</a>
-                    <a href="#">Mac</a>
-                    <a href="#">iPad</a>
-                    <a href="#">iPhone</a>
-                    <a href="#">Watch</a>
-                    <a href="#">AirPods</a>
-                    <a href="#">Tv y Casa</a>
-                    <a href="#">Solo en Apple</a>
-                    <a href="#">Accesorios</a>
-                    <a href="#">Soporte</a>
-                </div>
-            </li>
-            <li class="header__icon">
-                <a class="header__icon" href="#"><span class="fab fa-apple fa-lg"></span></a>
-            </li>
-            <li class="header__icon">
-                <a class="header__icon" href="#"><i class="fas fa-shopping-bag"></i></a>
-            </li>
+        <script>
+            function myFunction() {
+                document.getElementById("header__dropdown-button").classList.toggle("show");
+            }
+            window.onclick = function(event) {
+                if (!event.target.matches('.header__dropbtn')) {
+                    var dropdowns = document.getElementsByClassName("dropdown-content");
+                    var i;
+                    for (i = 0; i < dropdowns.length; i++) {
+                        var openDropdown = dropdowns[i];
+                        if (openDropdown.classList.contains('show')) {
+                            openDropdown.classList.remove('show');
+                        }
+                    }
+                }
+            }
+        </script>
+        <header >
+            <ul class="header">
+                <li class="header__icon header__dropdown">
+                    <button onclick="myFunction()" class="header__icon header__dropbtn"><i class="fa fa-bars fa-lg"></i></button>
+                </li>
+                <li class="header__icon">
+                    <a class="header__icon" href="#"><span class="fab fa-apple fa-lg"></span></a>
+                </li>
+                <li class="header__icon">
+                    <a class="header__icon" href="#"><i class="fas fa-shopping-bag"></i></a>
+                </li>
+            </ul>
+            <div id="header__dropdown-button" class="header__dropdown-content">
+                <a href="#">Tienda</a>
+                <a href="#">Mac</a>
+                <a href="#">iPad</a>
+                <a href="#">iPhone</a>
+                <a href="#">Watch</a>
+                <a href="#">AirPods</a>
+                <a href="#">Tv y Casa</a>
+                <a href="#">Solo en Apple</a>
+                <a href="#">Accesorios</a>
+                <a href="#">Soporte</a>
+            </div>
         </header>
         <div class="main">
             <div class="main__content">
@@ -66,7 +85,7 @@
             </div>
         </div>
         <footer class="footer">
-            <p>Copyright © 2021 Apple Inc. Todos los derechos reservados.</p>
+            <p>Copyright <i class="fa fa-copyright"></i> 2021 Apple Inc. Todos los derechos reservados.</p>
         </footer>
     </body>
 </html>
