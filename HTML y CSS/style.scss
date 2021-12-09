@@ -1,7 +1,20 @@
-/* Reglas por defecto (mobile) */
 $font-stack: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
 $letters-color: #1d1d1f;
 $links-color: #2997ff;
+$layout_bp_tablet: 768px;
+$layout_bp_desktop: 1200px;
+
+@mixin tablet {
+    @media only screen and (min-width: #{$layout_bp_tablet}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media only screen and (min-width: #{$layout_bp_desktop}) {
+        @content;
+    }
+}
 
 body{
     margin: 0;
@@ -37,7 +50,6 @@ body{
     }
 }
 
-//Revisar dropdown no se ve
 .header__dropbtn:hover .header__dropbtn:focus {
     background-color: #2980B9;
 }
@@ -68,11 +80,14 @@ body{
     }
 }
 
-.show {display: block;}
+.show {
+    display: block;
+}
 
 .main {
     display: flex;
     flex-direction: column;
+    margin-top: 48px;
 }
 
 .main__content {
@@ -88,16 +103,40 @@ body{
     background-position: center;
     background-attachment: scroll;
     margin-bottom: 15px;
+
+    @include tablet {
+        height: 650px;
+    }
 }
 
 #MainImg2 {
     background-image: url("https://www.apple.com/v/home/ah/images/heroes/iphone-13/hero_iphone_13__f194u1rdooeq_small_2x.jpg");
+
+    #main__content-mobile{
+        display: block;
+    }
+
+    #main__content-tablet{
+        display: none;
+    }
+
+    @include tablet {
+        background-image: url("https://www.apple.com/v/home/ah/images/heroes/iphone-13/hero_iphone_13__f194u1rdooeq_mediumtall_2x.jpg");
+    
+        #main__content-mobile{
+            display: none;
+        }
+
+        #main__content-tablet{
+            display: block;
+        }
+    }
 }
 
 .main__content-centeredTop {
     position: absolute;
     left: 50%;
-    top: 25%;
+    top: 20%;
     transform: translate(-50%, -50%);
 }
 
@@ -125,9 +164,18 @@ body{
     font-weight: 600;
     letter-spacing: .004em;
     font-family: $font-stack;
+
+    @include tablet {
+        font-size: 48px;
+        line-height: 1.08349;
+    }
 }
 
-#title2 {
+#title2-1 {
+    color: #f5f5f7;
+}
+
+#title2-2 {
     color: #f5f5f7;
 }
 
@@ -141,14 +189,35 @@ body{
     font-weight: 400;
     letter-spacing: .012em;
     font-family: $font-stack;
+
+    @include tablet {
+        margin: 5px 0 0 0;
+        font-size: 24px;
+        line-height: 1.16667;
+        letter-spacing: .009em;
+    }
 }
 
-#subtitle2 {
+#subtitle2-1 {
     color: #fec2eb;
 }
 
+#subtitle2-2 {
+    color: #fec2eb;
+}
+
+.main__content-links {
+    margin: 12px 0 0 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    @include tablet {
+        margin: 14px 0 0 0;
+    }
+}
+
 .main__content-link {
-    margin-top: 12px;
     text-decoration: none;
     color: $links-color;
     font-style: normal;
@@ -157,6 +226,30 @@ body{
     font-weight: 400;
     letter-spacing: -.022em;
     font-family: $font-stack;
+
+    @include tablet {
+        font-size: 19px;
+        line-height: 1.21053;
+        color: #06c;
+        letter-spacing: inherit;
+        white-space: nowrap;
+
+        &:not(:first-child){
+            margin-left: 27px;
+        }
+    }
+}
+
+.secondary {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        margin: 0 12px 12px 12px;
+    }
 }
 
 .secondary__content {
@@ -171,6 +264,11 @@ body{
     background-image: url("https://www.apple.com/v/home/ah/images/promos/macbook-pro/tile_macbookpro__cx0ur0qg9biq_small_2x.jpg");
     background-position: center;
     margin-bottom: 15px;
+
+    @include tablet {
+        flex: 45%;
+        margin-bottom: 0;
+    }
 }
 
 #secondaryImg2{
@@ -185,6 +283,10 @@ body{
     font-weight: 600;
     letter-spacing: .002em;
     font-family: $font-stack;
+
+    @include tablet {
+        white-space: nowrap;
+    }
 }
 
 .secondary__content-subtitle {
@@ -195,27 +297,15 @@ body{
     font-weight: 400;
     letter-spacing: .012em;
     font-family: $font-stack;
+
+    @include tablet {
+        white-space: nowrap;
+    }
 }
 
 .footer {
-    background-color: #f1f1f1;
+    background-color: #f5f5f7;
+    color: #6e6e73;
     padding: 10px;
     text-align: center;
-}
-
-/* Resto de reglas en orden creciente */
-@media (min-width: 768px) {
-    p {
-        font-size: 16px;
-    }
-}
-@media (min-width: 992px) {
-    p {
-        font-size: 20px;
-    }
-}
-@media (min-width: 1200px) {
-    p {
-        font-size: 24px;
-    }
 }
