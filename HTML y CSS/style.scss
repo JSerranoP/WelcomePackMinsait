@@ -56,6 +56,10 @@ body{
     overflow: hidden;
     width: 100%;
     z-index: 1;
+
+    @include tablet {
+        justify-content: space-evenly;
+    }
 }
 
 .header__icon {
@@ -132,6 +136,10 @@ body{
     @include tablet {
         height: 650px;
     }
+
+    @include desktop() {
+        height: 800px;
+    }
 }
 
 #MainImg2 {
@@ -161,7 +169,7 @@ body{
 .main__content-centeredTop {
     position: absolute;
     left: 50%;
-    top: 25%;
+    top: 22%;
     transform: translate(-50%, -50%);
 }
 
@@ -194,6 +202,12 @@ body{
         font-size: 48px;
         line-height: 1.08349;
     }
+
+    @include desktop() {
+        font-size: 56px;
+        line-height: 1.07143;
+        letter-spacing: -.005em;
+    }
 }
 
 #title2-1 {
@@ -220,6 +234,13 @@ body{
         font-size: 24px;
         line-height: 1.16667;
         letter-spacing: .009em;
+    }
+
+    @include desktop {
+        margin: 6px 0 0 0;
+        font-size: 28px;
+        line-height: 1.20733;
+        letter-spacing: .004em;
     }
 }
 
@@ -263,6 +284,18 @@ body{
             margin-left: 27px;
         }
     }
+
+    @include desktop() {
+        font-size: 21px;
+        line-height: 1.381;
+        color: #06c;
+        letter-spacing: inherit;
+        white-space: nowrap;
+
+        &:not(:first-child){
+            margin-left: 27px;
+        }
+    }
 }
 
 .secondary {
@@ -294,6 +327,10 @@ body{
         flex: 45%;
         margin-bottom: 0;
     }
+
+    @include desktop() {
+        height: 580px;
+    }
 }
 
 #secondaryImg2{
@@ -312,6 +349,12 @@ body{
     @include tablet {
         white-space: nowrap;
     }
+
+    @include desktop() {
+        font-size: 40px;
+        line-height: 1.1;
+        letter-spacing: 0em;
+    }
 }
 
 .secondary__content-subtitle {
@@ -325,6 +368,12 @@ body{
 
     @include tablet {
         white-space: nowrap;
+    }
+
+    @include desktop() {
+        font-size: 21;
+        line-height: 1.2381;
+        letter-spacing: 0em;
     }
 }
 

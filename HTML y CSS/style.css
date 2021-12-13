@@ -51,6 +51,14 @@ body {
   z-index: 1;
 }
 
+@media only screen and (min-width: 768px) {
+  .header {
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
 .header__icon {
   text-align: center;
   color: lightgrey;
@@ -142,6 +150,12 @@ body {
   }
 }
 
+@media only screen and (min-width: 1200px) {
+  .main__content {
+    height: 800px;
+  }
+}
+
 #MainImg2 {
   background-image: url("https://www.apple.com/v/home/ah/images/heroes/iphone-13/hero_iphone_13__f194u1rdooeq_small_2x.jpg");
 }
@@ -169,7 +183,7 @@ body {
 .main__content-centeredTop {
   position: absolute;
   left: 50%;
-  top: 25%;
+  top: 22%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
@@ -209,6 +223,14 @@ body {
   }
 }
 
+@media only screen and (min-width: 1200px) {
+  .main__content-title {
+    font-size: 56px;
+    line-height: 1.07143;
+    letter-spacing: -.005em;
+  }
+}
+
 #title2-1 {
   color: #f5f5f7;
 }
@@ -235,6 +257,15 @@ body {
     font-size: 24px;
     line-height: 1.16667;
     letter-spacing: .009em;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .main__content-subtitle {
+    margin: 6px 0 0 0;
+    font-size: 28px;
+    line-height: 1.20733;
+    letter-spacing: .004em;
   }
 }
 
@@ -278,6 +309,19 @@ body {
   .main__content-link {
     font-size: 19px;
     line-height: 1.21053;
+    color: #06c;
+    letter-spacing: inherit;
+    white-space: nowrap;
+  }
+  .main__content-link:not(:first-child) {
+    margin-left: 27px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .main__content-link {
+    font-size: 21px;
+    line-height: 1.381;
     color: #06c;
     letter-spacing: inherit;
     white-space: nowrap;
@@ -343,6 +387,12 @@ body {
   }
 }
 
+@media only screen and (min-width: 1200px) {
+  .secondary__content {
+    height: 580px;
+  }
+}
+
 #secondaryImg2 {
   background-image: url("https://www.apple.com/v/home/ah/images/promos/airpods/tile_airpods__fuv6vgn42y2q_small_2x.jpg");
 }
@@ -363,6 +413,14 @@ body {
   }
 }
 
+@media only screen and (min-width: 1200px) {
+  .secondary__content-title {
+    font-size: 40px;
+    line-height: 1.1;
+    letter-spacing: 0em;
+  }
+}
+
 .secondary__content-subtitle {
   margin: 4px 0 0 0;
   font-style: normal;
@@ -376,6 +434,14 @@ body {
 @media only screen and (min-width: 768px) {
   .secondary__content-subtitle {
     white-space: nowrap;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .secondary__content-subtitle {
+    font-size: 21;
+    line-height: 1.2381;
+    letter-spacing: 0em;
   }
 }
 
