@@ -20,6 +20,29 @@ body{
     margin: 0;
 }
 
+.headerMobile{
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    z-index: 1;
+
+    @include tablet {
+        display: none;
+    }
+}
+
+.headerTablet{
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    z-index: 1;
+    display: none;
+
+    @include tablet {
+        display: block;
+    }
+}
+
 .header {
     display: flex;
     background-color: #333333;
@@ -27,12 +50,11 @@ body{
     justify-content: space-between;
     align-items: center;
     align-content: center;
-    overflow: hidden;
-    width: 100%;
     top: 0;
-    position: fixed;
     margin: 0;
     padding: 0;
+    overflow: hidden;
+    width: 100%;
     z-index: 1;
 }
 
@@ -42,7 +64,12 @@ body{
     text-decoration: none;
     list-style-type: none;
     padding: 7px;
-
+    font-size: 12px;
+    line-height: 3.66667;
+    font-weight: 400;
+    letter-spacing: -.01em;
+    font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    
     button {
         border: none;
         background-color: #333333;
@@ -63,7 +90,6 @@ body{
     display: none;
     background-color: $letters-color;
     min-width: 100%;
-    margin-top: 48px;
     z-index: 1;
 
     a {
@@ -87,7 +113,6 @@ body{
 .main {
     display: flex;
     flex-direction: column;
-    margin-top: 48px;
 }
 
 .main__content {
@@ -136,7 +161,7 @@ body{
 .main__content-centeredTop {
     position: absolute;
     left: 50%;
-    top: 20%;
+    top: 25%;
     transform: translate(-50%, -50%);
 }
 
