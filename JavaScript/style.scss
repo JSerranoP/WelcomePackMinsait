@@ -1,6 +1,5 @@
 $font-stack: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
 $letters-color: #1d1d1f;
-$links-color: #2997ff;
 $layout_bp_tablet: 768px;
 $layout_bp_desktop: 1200px;
 
@@ -18,6 +17,7 @@ $layout_bp_desktop: 1200px;
 
 body {
     margin: 0;
+    min-height: 100%;
 }
 
 .header__content {
@@ -46,12 +46,27 @@ body {
 }
 
 .main {
-    height: 700px;
+    text-align: justify;
+}
+
+.main__title {
+    padding: 20px;
+    font-family: $font-stack;
+    font-size: 40px;
+    text-align: center;
+}
+
+.main__content{
+    margin: 20px;
+    font-family: $font-stack;
 }
 
 .footer {
     background-color: whitesmoke;
     text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
 .footer__socialMedias {

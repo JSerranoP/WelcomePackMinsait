@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Star Wars Wiki</title>
+        <title>Pokemon Wiki</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="./style.css">
@@ -10,30 +10,44 @@
         <script type="text/javascript" src=".\js\detail.js"></script>
         <script type="text/javascript" src=".\js\index.js"></script>
         <script type="text/javascript" src=".\js\list.js"></script>
+        <script type="text/javascript" src=".\js\info.js"></script>
     </head>
     <body>
         <header class="header">
             <div class="header__content">
-                <img class="header__logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1280px-Star_Wars_Logo.svg.png" alt="">
+                <img class="header__logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2560px-International_Pok%C3%A9mon_logo.svg.png" alt="">
             </div>
             <div class="header__navbar">
-                <a class="header__navbarItem" href=""><i class="fa-jedi"></i></a>
+                <a class="header__navbarItem" href="">X</a>
                 <button class="header__navbarItem">HOME</button>
                 <button class="header__navbarItem">LIST</button>
             </div>
             
         </header>
         <div class="main">
-            <h2>Main content</h2>
+            <h2 class="main__title">Temática: Pokemon</h2>
+            <p class="main__content">En esta web se pretende mostrar una lista de Pokemons con sus respectivos nombres, imagenes y descripcion</p>
+            <p class="main__content">En el header encontramos el link a la vista actual y a la vista del listado de los distintos pokemons</p>
+            <p class="main__content">En el footer o pie de pagina, podemos ver los iconos con los links a las redes sociales de Pokemon</p>
+            <br>
+            <p class="main__content">En la vista principal, al hacer <i>hover</i> por algun elemento, este cambia de color, y al hacer <i>out</i> vuelve a su estado original</p>
+            <p class="main__content">Al clickar en un bloque que está condensado, este se despliega para mostrar toda la información</p>
+            <br>
+            <p class="main__content">La vista del listado de Pokemons se ha cargado dinámicamente</p>
+            <p class="main__content">Se muestran inicialmente el nombre y la imagen de cada uno</p>
+            <p class="main__content">Al hacer click sobre ellos, navegaremos a la vista en detalle</p>
+            <br>
+            <p class="main__content">La vista en detalle recibe un objeto con los datos del elemento clickado</p>
+            <p class="main__content">En ella aparece de nuevo el nombre y la imagen del Pokemon, pero también su descripción</p>
         </div>
         <footer class="footer">
             <div class="footer__socialMedias">
-                <a class="footer__socialLink" href="https://www.facebook.com/StarWars"><i class="fa-brands fa-facebook"></i></a>
-                <a class="footer__socialLink" href="https://www.instagram.com/starwars/"><i class="fa-brands fa-instagram"></i></a>
-                <a class="footer__socialLink" href="https://twitter.com/starwars"><i class="fa-brands fa-twitter"></i></a>
-                <a class="footer__socialLink" href="https://www.youtube.com/user/starwars"><i class="fa-brands fa-youtube"></i></a>
+                <a class="footer__socialLink" href="https://www.facebook.com/PokemonOficialES"><i class="fa-brands fa-facebook"></i></a>
+                <a class="footer__socialLink" href="https://www.instagram.com/PokemonESP/"><i class="fa-brands fa-instagram"></i></a>
+                <a class="footer__socialLink" href="https://twitter.com/Pokemon_ES_ESP"><i class="fa-brands fa-twitter"></i></a>
+                <a class="footer__socialLink" href="https://www.youtube.com/user/PokemonOficialES"><i class="fa-brands fa-youtube"></i></a>
             </div>
-            <p class="footer__rights">TM & © Lucasfilm Ltd. All Rights Reserved</p>
+            <p class="footer__rights">© 2021 Pokémon. TM, ® Nintendo</p>
         </footer>
     </body>
 </html>
