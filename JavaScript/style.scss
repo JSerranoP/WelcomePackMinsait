@@ -43,6 +43,10 @@ body {
     background-color: #333;
     color: white;
     cursor: pointer;
+
+    &--hover{
+        background-color: rgb(37, 37, 37);
+    }
 }
 
 .main {
@@ -56,9 +60,15 @@ body {
     text-align: center;
 }
 
-.main__content{
+.main__paragraph{
     margin: 20px;
     font-family: $font-stack;
+}
+
+.list__content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .footer {

@@ -30,6 +30,10 @@ body {
   cursor: pointer;
 }
 
+.header__navbarItem--hover {
+  background-color: #252525;
+}
+
 .main {
   text-align: justify;
 }
@@ -41,9 +45,21 @@ body {
   text-align: center;
 }
 
-.main__content {
+.main__paragraph {
   margin: 20px;
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+.list__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .footer {
