@@ -1,7 +1,9 @@
+import {showPokemons, addListeners2} from "./list.js";
+
 window.onload = function() {
     //setTimeout(showAlert, 2000);
     showMain();
-    addListeners();
+    addListeners1();
 }
 
 var current;
@@ -10,7 +12,7 @@ function showAlert() {
     alert("Bienvenido a mi web");
 }
 
-function addListeners() {
+function addListeners1() {
     document.getElementById("home__icon").addEventListener("click", showMain);
     document.getElementById("home__button").addEventListener("click", showMain);
     document.getElementById("list__button").addEventListener("click", showList);
@@ -31,12 +33,16 @@ var onMouseOut = function(event) {
 }
 
 var showList = function(event) {
-    current = 1
-    var padre = document.getElementById("main");
-    var child = document.getElementById("main__content");
-    padre.removeChild(child);
-    console.log(child);
-    console.log(event);
+    if(current == 1){
+        alert("Ya estamos aquí");
+    } else {
+        current = 1
+        var padre = document.getElementById("main");
+        var child = document.getElementById("main__content");
+        padre.removeChild(child);
+        showPokemons();
+        addListeners2();
+    }
 }
 
 function showMain() {
@@ -44,10 +50,16 @@ function showMain() {
         alert("Ya estamos aquí");
     } else {
         current = 0;
+
+        var padre = document.getElementById("main");
+        var child = document.getElementById("list__content");
+        if(child)
+            padre.removeChild(child);
+        
         const contenedor = document.getElementById('main');
 
         const main_content = document.createElement('div');
-        main_content.setAttribute('class', 'main__content');
+        main_content.setAttribute('id', 'main__content');
 
         const titulo = document.createElement('h2');
         titulo.setAttribute('class', 'main__title');
