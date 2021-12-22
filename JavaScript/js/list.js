@@ -1,4 +1,5 @@
 import {getList} from "./info.js";
+import {showDetail} from "./detail.js";
 
 const showPokemons = async() => {
     const list = await getList()
@@ -13,9 +14,13 @@ const showPokemons = async() => {
         const tarjeta = document.createElement('div');
         tarjeta.setAttribute('class', 'list__card');
         tarjeta.setAttribute('id', 'list__card' + i);
+        //tarjeta.addEventListener("click", showDetail(await list[i].name, await list[i].sprites.front_default));
+        tarjeta.addEventListener("mouseover", onMouseOver);
+        tarjeta.addEventListener("mouseout", onMouseOut);
 
         const cabeceraTarjeta = document.createElement('div');
         cabeceraTarjeta.setAttribute('class', 'list__card-header');
+
         const cuerpoTarjeta = document.createElement('div');
         cuerpoTarjeta.setAttribute('class', 'list__card-body');
 
@@ -39,18 +44,8 @@ const showPokemons = async() => {
     }
 }
 
-//Revisar
-function addListeners2() {
-    var cards = document.getElementsByClassName("list__card");
-    console.log(cards[0]);
-    for (let i = 0; i < cards.length; i++) {
-        console.log(cards[i]);
-        cards[i].addEventListener("mouseover", onMouseOver);
-        cards[i].addEventListener("mouseout", onMouseOut);
-    }
-}
-
 var onMouseOver = function(event) {
+    console.log(event.target.id);
     document.getElementById(event.target.id).classList.add("list__card--hover");
 }
 
@@ -58,4 +53,4 @@ var onMouseOut = function(event) {
     document.getElementById(event.target.id).classList.remove("list__card--hover");
 }
 
-export {showPokemons, addListeners2}
+export {showPokemons}

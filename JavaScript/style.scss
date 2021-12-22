@@ -1,5 +1,5 @@
 $font-stack: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
-$letters-color: #1d1d1f;
+$letters-color: #21386e;
 $layout_bp_tablet: 768px;
 $layout_bp_desktop: 1200px;
 
@@ -25,7 +25,6 @@ body {
     padding: 60px;
     text-align: center;
     background: black;
-    color: white;
 }
 
 .header__logo {
@@ -42,7 +41,7 @@ body {
     padding: 15px 20px;
     border: none;
     background-color: #333;
-    color: white;
+    color: #ffcb05;
     cursor: pointer;
 
     &--hover{
@@ -59,11 +58,44 @@ body {
     font-family: $font-stack;
     font-size: 40px;
     text-align: center;
+    color: $letters-color;
 }
 
 .main__paragraph{
     margin: 20px;
     font-family: $font-stack;
+}
+
+.main__dropdown{
+    margin: auto;
+    padding: 0;
+    width: 97%;
+    cursor: pointer;
+    background-color: white;
+    text-decoration: none;
+    font-size: 22px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid grey;
+}
+
+.main_dropdown_titulo{
+    padding: 20px;
+    font-family: $font-stack;
+    font-size: 35px;
+    text-align: left;
+    color: $letters-color;
+}
+
+.main__dropdown-content{
+    display: none;
+    width: 100%;
+
+    &--click{
+        display: block;
+    }
 }
 
 .list__content {
@@ -120,9 +152,11 @@ body {
 .footer__socialLink{
     padding: 10px;
     text-decoration: none;
+    color: #2b74b9;
 }
 
 .footer__rights {
     padding: 15px;
     margin: 0;
+    color: $letters-color;
 }

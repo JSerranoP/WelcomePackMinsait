@@ -1,9 +1,9 @@
-import {showPokemons, addListeners2} from "./list.js";
+import {showPokemons} from "./list.js";
 
 window.onload = function() {
     //setTimeout(showAlert, 2000);
     showMain();
-    addListeners1();
+    addListeners();
 }
 
 var current;
@@ -12,7 +12,7 @@ function showAlert() {
     alert("Bienvenido a mi web");
 }
 
-function addListeners1() {
+function addListeners() {
     document.getElementById("home__icon").addEventListener("click", showMain);
     document.getElementById("home__button").addEventListener("click", showMain);
     document.getElementById("list__button").addEventListener("click", showList);
@@ -32,7 +32,7 @@ var onMouseOut = function(event) {
     document.getElementById(event.target.id).classList.remove("header__navbarItem--hover");
 }
 
-var showList = function(event) {
+function showList() {
     if(current == 1){
         alert("Ya estamos aquí");
     } else {
@@ -41,7 +41,6 @@ var showList = function(event) {
         var child = document.getElementById("main__content");
         padre.removeChild(child);
         showPokemons();
-        addListeners2();
     }
 }
 
@@ -108,6 +107,46 @@ function showMain() {
         const saltoLinea1 = document.createElement('br');
         const saltoLinea2 = document.createElement('br');
 
+        const main_dropdown1 = document.createElement('div');
+        main_dropdown1.setAttribute('id', 'main__dropdown2');
+        main_dropdown1.setAttribute('class', 'main__dropdown');
+        main_dropdown1.addEventListener("click", showDropdown1);
+
+        const main_dropdown_titulo1 = document.createElement('h2');
+        main_dropdown_titulo1.setAttribute('class', 'main_dropdown_titulo');
+        main_dropdown_titulo1.textContent = "Historia de Pokemon";
+
+        const main_dropdown_angle1 = document.createElement('i');
+        main_dropdown_angle1.setAttribute('class', 'fa-solid fa-angle-down');
+
+        const main_dropdown_content1 = document.createElement('div');
+        main_dropdown_content1.setAttribute('id', 'main__dropdown-content1');
+        main_dropdown_content1.setAttribute('class', 'main__dropdown-content');
+
+        const parrafo11 = document.createElement('p');
+        parrafo11.setAttribute('class', 'main__paragraph');
+        parrafo11.textContent = "Cuando el creador, Satoshi Tajiri, era joven, uno de sus pasatiempos favoritos era la recolección y colección de insectos.8​ Tajiri se dirigió a la ciudad de Tokio a estudiar, ya que su padre quería que fuese ingeniero. Sin embargo, a Tajiri no le agradaba la idea de estudiar y se dedicaba más a pasatiempos como los videojuegos. Pasó un tiempo y Tajiri llegó a trabajar como jugador de prueba de algunos juegos para revistas, junto a Ken Sugimori, con quien hizo una gran amistad. En 1989 crearon una revista llamada Game Freak.";
+
+        const main_dropdown2 = document.createElement('div');
+        main_dropdown2.setAttribute('id', 'main__dropdown2');
+        main_dropdown2.setAttribute('class', 'main__dropdown');
+        main_dropdown2.addEventListener("click", showDropdown2);
+
+        const main_dropdown_titulo2 = document.createElement('h2');
+        main_dropdown_titulo2.setAttribute('class', 'main_dropdown_titulo');
+        main_dropdown_titulo2.textContent = "Concepto de Pokemon";
+
+        const main_dropdown_angle2 = document.createElement('i');
+        main_dropdown_angle2.setAttribute('class', 'fa-solid fa-angle-down');
+
+        const main_dropdown_content2 = document.createElement('div');
+        main_dropdown_content2.setAttribute('id', 'main__dropdown-content2');
+        main_dropdown_content2.setAttribute('class', 'main__dropdown-content');
+
+        const parrafo12 = document.createElement('p');
+        parrafo12.setAttribute('class', 'main__paragraph');
+        parrafo12.textContent = "Los Pokémon son una clase de criaturas inspiradas en animales reales, insectos, objetos, plantas o criaturas mitológicas. Los jugadores toman el papel Entrenadores Pokémon y tienen tres objetivos generales: completar la Pokédex mediante la recopilación de todas las especies de Pokémon disponibles que se encuentran, entrenar un equipo de Pokémon poderosos de aquellos que han atrapado para competir contra otros entrenadores. El objetivo final del juego es llegar a ganar la Liga Pokémon y convertirse en el campeón regional. La temática de coleccionar, entrenar y luchar están presentes en casi todas las versiones de la franquicia Pokémon, incluidos los videojuegos, las series de anime y manga, y el juego de cartas coleccionables Pokémon. títulos también implican que el jugador pueda desentrañar misterios sobre la existencia de Pokémon legendarios o míticos.";
+        
         contenedor.appendChild(main_content);
         main_content.appendChild(titulo);
         main_content.appendChild(parrafo1);
@@ -122,5 +161,25 @@ function showMain() {
         main_content.appendChild(saltoLinea2);
         main_content.appendChild(parrafo9);
         main_content.appendChild(parrafo10);
+
+        main_content.appendChild(main_dropdown1);
+        main_dropdown1.appendChild(main_dropdown_titulo1);
+        main_dropdown1.appendChild(main_dropdown_angle1);
+        main_content.appendChild(main_dropdown_content1);
+        main_dropdown_content1.appendChild(parrafo11);
+
+        main_content.appendChild(main_dropdown2);
+        main_dropdown2.appendChild(main_dropdown_titulo2);
+        main_dropdown2.appendChild(main_dropdown_angle2);
+        main_content.appendChild(main_dropdown_content2);
+        main_dropdown_content2.appendChild(parrafo12);
     }
+}
+
+function showDropdown1() {
+    document.getElementById("main__dropdown-content1").classList.toggle("main__dropdown-content--click");
+}
+
+function showDropdown2() {
+    document.getElementById("main__dropdown-content2").classList.toggle("main__dropdown-content--click");
 }
