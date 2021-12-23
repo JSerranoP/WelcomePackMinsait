@@ -1,5 +1,7 @@
 $font-stack: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
-$letters-color: #21386e;
+$main-color: #21386e;
+$secondary-color: #2b74b9;
+$background-color-navBar: #333;
 $layout_bp_tablet: 768px;
 $layout_bp_desktop: 1200px;
 
@@ -34,13 +36,13 @@ body {
 
 .header__navbar {
     display: flex;
-    background-color: #333;
+    background-color: $background-color-navBar;
 }
 
 .header__navbarItem {
     padding: 15px 20px;
     border: none;
-    background-color: #333;
+    background-color: $background-color-navBar;
     color: #ffcb05;
     cursor: pointer;
 
@@ -58,7 +60,7 @@ body {
     font-family: $font-stack;
     font-size: 40px;
     text-align: center;
-    color: $letters-color;
+    color: $main-color;
 }
 
 .main__paragraph{
@@ -71,14 +73,13 @@ body {
     padding: 0;
     width: 97%;
     cursor: pointer;
-    background-color: white;
     text-decoration: none;
     font-size: 22px;
     text-align: left;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid $secondary-color;
 }
 
 .main_dropdown_titulo{
@@ -86,12 +87,13 @@ body {
     font-family: $font-stack;
     font-size: 35px;
     text-align: left;
-    color: $letters-color;
+    color: $main-color;
 }
 
 .main__dropdown-content{
     display: none;
     width: 100%;
+    border-bottom: 1px solid $secondary-color;
 
     &--click{
         display: block;
@@ -114,6 +116,7 @@ body {
 
 .list__card{
     padding: 30px;
+    cursor: pointer;
 
     &--hover{
         background-color: rgb(201, 201, 201);
@@ -123,6 +126,7 @@ body {
 .list__card-title{
     text-align: center;
     text-transform: uppercase;
+    color: $main-color;
 }
 
 .list__card-body{
@@ -134,8 +138,27 @@ body {
     height: auto;
 }
 
+.detail__card{
+    text-align: center;
+}
+
+.detail__card-title{
+    text-align: center;
+    text-transform: uppercase;
+    color: $main-color;
+}
+
+.detail__card-body{
+    text-align: center;
+}
+
+.detail__card-img{
+    width: 30%;
+    height: auto;
+}
+
 .footer {
-    background-color: whitesmoke;
+    background-color: rgb(201, 201, 201);
     text-align: center;
     position: relative;
     bottom: 0;
@@ -152,11 +175,11 @@ body {
 .footer__socialLink{
     padding: 10px;
     text-decoration: none;
-    color: #2b74b9;
+    color: $secondary-color;
 }
 
 .footer__rights {
     padding: 15px;
     margin: 0;
-    color: $letters-color;
+    color: $main-color;
 }

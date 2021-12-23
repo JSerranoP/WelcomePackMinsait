@@ -6,7 +6,7 @@ window.onload = function() {
     addListeners();
 }
 
-var current;
+window.current = 4;
 
 function showAlert() {
     alert("Bienvenido a mi web");
@@ -38,8 +38,8 @@ function showList() {
     } else {
         current = 1
         var padre = document.getElementById("main");
-        var child = document.getElementById("main__content");
-        padre.removeChild(child);
+        while(padre.hasChildNodes())
+            padre.removeChild(padre.firstChild);
         showPokemons();
     }
 }

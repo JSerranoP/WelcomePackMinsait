@@ -1,6 +1,7 @@
 import {getList} from "./info.js";
 import {showDetail} from "./detail.js";
 
+
 const showPokemons = async() => {
     const list = await getList()
 
@@ -14,7 +15,7 @@ const showPokemons = async() => {
         const tarjeta = document.createElement('div');
         tarjeta.setAttribute('class', 'list__card');
         tarjeta.setAttribute('id', 'list__card' + i);
-        //tarjeta.addEventListener("click", showDetail(await list[i].name, await list[i].sprites.front_default));
+        tarjeta.addEventListener("click", function() {showDetail(list[i].name, list[i].sprites.front_default, list[i].abilities[0].ability.name)}, current = 2);
         tarjeta.addEventListener("mouseover", onMouseOver);
         tarjeta.addEventListener("mouseout", onMouseOut);
 
@@ -24,7 +25,7 @@ const showPokemons = async() => {
         const cuerpoTarjeta = document.createElement('div');
         cuerpoTarjeta.setAttribute('class', 'list__card-body');
 
-        const titulo = document.createElement('h5');
+        const titulo = document.createElement('h3');
         titulo.setAttribute('class', 'list__card-title');
         titulo.textContent = await list[i].name;
 

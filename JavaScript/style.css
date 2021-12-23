@@ -56,7 +56,6 @@ body {
   padding: 0;
   width: 97%;
   cursor: pointer;
-  background-color: white;
   text-decoration: none;
   font-size: 22px;
   text-align: left;
@@ -69,7 +68,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #2b74b9;
 }
 
 .main_dropdown_titulo {
@@ -83,6 +82,7 @@ body {
 .main__dropdown-content {
   display: none;
   width: 100%;
+  border-bottom: 1px solid #2b74b9;
 }
 
 .main__dropdown-content--click {
@@ -114,6 +114,7 @@ body {
 
 .list__card {
   padding: 30px;
+  cursor: pointer;
 }
 
 .list__card--hover {
@@ -123,6 +124,7 @@ body {
 .list__card-title {
   text-align: center;
   text-transform: uppercase;
+  color: #21386e;
 }
 
 .list__card-body {
@@ -134,8 +136,27 @@ body {
   height: auto;
 }
 
+.detail__card {
+  text-align: center;
+}
+
+.detail__card-title {
+  text-align: center;
+  text-transform: uppercase;
+  color: #21386e;
+}
+
+.detail__card-body {
+  text-align: center;
+}
+
+.detail__card-img {
+  width: 30%;
+  height: auto;
+}
+
 .footer {
-  background-color: whitesmoke;
+  background-color: #c9c9c9;
   text-align: center;
   position: relative;
   bottom: 0;
