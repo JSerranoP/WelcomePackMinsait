@@ -5,7 +5,6 @@ const getList = async () => {
         const response = await fetch('https://pokeapi.co/api/v2/pokemon/' + i);
         const data = await response.json();
         list.push(data);
-        console.log(data);
     }
     
     return list;

@@ -51,9 +51,9 @@ function showMain() {
         current = 0;
 
         var padre = document.getElementById("main");
-        var child = document.getElementById("list__content");
-        if(child)
-            padre.removeChild(child);
+        var padre = document.getElementById("main");
+        while(padre.hasChildNodes())
+            padre.removeChild(padre.firstChild);
         
         const contenedor = document.getElementById('main');
 
@@ -117,7 +117,7 @@ function showMain() {
         main_dropdown_titulo1.textContent = "Historia de Pokemon";
 
         const main_dropdown_angle1 = document.createElement('i');
-        main_dropdown_angle1.setAttribute('class', 'fa-solid fa-angle-down');
+        main_dropdown_angle1.setAttribute('class', 'fa-solid fa-angle-down main__dropdown-icon');
 
         const main_dropdown_content1 = document.createElement('div');
         main_dropdown_content1.setAttribute('id', 'main__dropdown-content1');
@@ -137,7 +137,7 @@ function showMain() {
         main_dropdown_titulo2.textContent = "Concepto de Pokemon";
 
         const main_dropdown_angle2 = document.createElement('i');
-        main_dropdown_angle2.setAttribute('class', 'fa-solid fa-angle-down');
+        main_dropdown_angle2.setAttribute('class', 'fa-solid fa-angle-down main__dropdown-icon');
 
         const main_dropdown_content2 = document.createElement('div');
         main_dropdown_content2.setAttribute('id', 'main__dropdown-content2');

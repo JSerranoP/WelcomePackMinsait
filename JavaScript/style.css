@@ -40,7 +40,6 @@ body {
 
 .main__title {
   padding: 20px;
-  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 40px;
   text-align: center;
   color: #21386e;
@@ -48,7 +47,6 @@ body {
 
 .main__paragraph {
   margin: 20px;
-  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
 .main__dropdown {
@@ -73,7 +71,6 @@ body {
 
 .main_dropdown_titulo {
   padding: 20px;
-  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 35px;
   text-align: left;
   color: #21386e;
@@ -87,6 +84,10 @@ body {
 
 .main__dropdown-content--click {
   display: block;
+}
+
+.main__dropdown-icon {
+  color: #2b74b9;
 }
 
 .list__content {

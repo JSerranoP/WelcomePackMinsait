@@ -1,6 +1,6 @@
 import {getList} from "./info.js";
 import {showDetail} from "./detail.js";
-
+export {showPokemons}
 
 const showPokemons = async() => {
     const list = await getList()
@@ -15,7 +15,7 @@ const showPokemons = async() => {
         const tarjeta = document.createElement('div');
         tarjeta.setAttribute('class', 'list__card');
         tarjeta.setAttribute('id', 'list__card' + i);
-        tarjeta.addEventListener("click", function() {showDetail(list[i].name, list[i].sprites.front_default, list[i].abilities[0].ability.name)}, current = 2);
+        tarjeta.addEventListener("click", function() {showDetail(list[i].name, list[i].sprites.front_default, list[i].abilities[0].ability.name)});
         tarjeta.addEventListener("mouseover", onMouseOver);
         tarjeta.addEventListener("mouseout", onMouseOut);
 
@@ -46,12 +46,9 @@ const showPokemons = async() => {
 }
 
 var onMouseOver = function(event) {
-    console.log(event.target.id);
     document.getElementById(event.target.id).classList.add("list__card--hover");
 }
 
 var onMouseOut = function(event) {
     document.getElementById(event.target.id).classList.remove("list__card--hover");
 }
-
-export {showPokemons}
