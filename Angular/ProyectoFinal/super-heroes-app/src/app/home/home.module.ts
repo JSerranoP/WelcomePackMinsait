@@ -13,6 +13,11 @@ import { FuncionamientoWebComponent } from './main-home/funcionamiento-web/funci
     DefinicionComponent,
     RequisitosComponent,
     FuncionamientoWebComponent
+  ],exports: [
+    MainHomeComponent,
+    DefinicionComponent,
+    RequisitosComponent,
+    FuncionamientoWebComponent
   ],
   imports: [
     CommonModule
