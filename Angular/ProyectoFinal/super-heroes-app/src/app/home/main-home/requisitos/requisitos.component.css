@@ -1,0 +1,29 @@
+.requisitos__container {
+  background-color: #f1f1f1;
+}
+
+.requisitos__content {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 64px 0;
+}
+
+.requisitos__title {
+  font-size: 28px;
+  padding: 0 40px;
+}
+
+.requisitos__subtitle {
+  font-size: 20px;
+  padding: 0 40px;
+  color: #4d4d4d;
+}
+
+.requisitos__paragraph {
+  font-size: 16px;
+  text-align: justify;
+  padding: 0 40px;
+  color: #5a5a5a;
+}
+/*# sourceMappingURL=requisitos.component.css.map */

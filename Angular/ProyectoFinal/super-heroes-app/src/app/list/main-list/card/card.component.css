@@ -1,0 +1,7 @@
+.list__content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto auto auto;
+      grid-template-columns: auto auto auto auto auto;
+}
+/*# sourceMappingURL=card.component.css.map */

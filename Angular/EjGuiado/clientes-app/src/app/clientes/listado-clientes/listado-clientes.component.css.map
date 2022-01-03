@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,OAAO,CAAC;EACJ,OAAO,EAAE,IAAI;EACb,aAAa,EAAE,cAAc;EAC7B,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,KAAK;CACjB;;AACD,AAAA,IAAI,CAAC;EACH,OAAO,EAAE,YAAY;EACrB,KAAK,EAAE,GAAG;EACV,YAAY,EAAE,EAAE;CACjB",
+    "sources": [
+        "listado-clientes.component.scss"
+    ],
+    "names": [],
+    "file": "listado-clientes.component.css"
+}

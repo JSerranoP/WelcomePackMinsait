@@ -5,11 +5,7 @@ export interface SuperHeroeInterface {
 }
 
 export interface SuperHeroeResponseInterface {
-    info: {
-        count: number;
-        next: string;
-        pages: number;
-        prev: string;
-    };
+    "response": string;
+    "results-for": string;
     results: SuperHeroeInterface[];
 }

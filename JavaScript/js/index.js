@@ -24,14 +24,6 @@ function addListeners() {
     document.getElementById("list__button").addEventListener("mouseout", onMouseOut);
 }
 
-var onMouseOver = function(event) {
-    document.getElementById(event.target.id).classList.add("header__navbarItem--hover");
-}
-
-var onMouseOut = function(event) {
-    document.getElementById(event.target.id).classList.remove("header__navbarItem--hover");
-}
-
 function showList() {
     if(current == 1){
         alert("Ya estamos aquí");

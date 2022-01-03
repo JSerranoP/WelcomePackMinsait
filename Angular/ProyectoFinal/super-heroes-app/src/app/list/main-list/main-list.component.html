@@ -1,9 +1,2 @@
 <p>main-list works!</p>
 <app-card></app-card>
-<div *ngIf="superheroesList">
-    <h3>SuperHeros List!</h3>
-    <div *ngFor="let superheroe of superheroesList">
-        <h4>{{ superheroe.id }} - {{ superheroe.name }}</h4>
-        <img [src]="superheroe.image" [alt]="superheroe.name" />
-    </div>
-</div>

@@ -16,8 +16,6 @@ const showPokemons = async() => {
         tarjeta.setAttribute('class', 'list__card');
         tarjeta.setAttribute('id', 'list__card' + i);
         tarjeta.addEventListener("click", function() {showDetail(list[i].name, list[i].sprites.front_default, list[i].abilities[0].ability.name)});
-        tarjeta.addEventListener("mouseover", onMouseOver);
-        tarjeta.addEventListener("mouseout", onMouseOut);
 
         const cabeceraTarjeta = document.createElement('div');
         cabeceraTarjeta.setAttribute('class', 'list__card-header');
@@ -43,12 +41,4 @@ const showPokemons = async() => {
 
         cuerpoTarjeta.appendChild(imagen);
     }
-}
-
-var onMouseOver = function(event) {
-    document.getElementById(event.target.id).classList.add("list__card--hover");
-}
-
-var onMouseOut = function(event) {
-    document.getElementById(event.target.id).classList.remove("list__card--hover");
 }
