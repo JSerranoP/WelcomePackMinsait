@@ -11,21 +11,19 @@ import { ListService } from '../../list.service';
 export class CardComponent implements OnInit {
 
   superheroesList: SuperHero[] = [];
+  filter: string = '';
 
   constructor(private listService: ListService) { }
 
   ngOnInit() {
     this.listService.getSuperheroes().pipe(
-      map((results: SuperHeroResponse) => {
-        const res: ApiSuperHero[] = results.results;
-        const formattedResults: SuperHero[] = res.map(({ id, name, image}) => ({
+      map((results: SuperHeroResponse) => results.results.map(({ id, name, image}) => ({
           id,
           name: name,
           image: image.url,
-        }));
-        return formattedResults;
-      })
-    ).subscribe((formattedResults) => {
+        }))
+      )
+    ).subscribe((formattedResults: SuperHero[]) => {
         this.superheroesList = formattedResults;
         console.log(this.superheroesList);
       });

@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { MainListComponent } from './main-list/main-list.component';
 import { CardComponent } from './main-list/card/card.component';
 import { ListService } from './list.service';
+import { AppPipesModule } from '../app-pipes.module';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { ListService } from './list.service';
     CardComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    AppPipesModule,
+    FormsModule
   ],
   providers: [
     ListService
