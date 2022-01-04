@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SuperHeroeInterface, SuperHeroeResponseInterface } from '../../list.model';
+import { map } from 'rxjs';
+import { ApiSuperHero, SuperHero, SuperHeroResponse } from '../../list.model';
 import { ListService } from '../../list.service';
 
 @Component({
@@ -9,22 +10,22 @@ import { ListService } from '../../list.service';
 })
 export class CardComponent implements OnInit {
 
-  superheroesList: SuperHeroeInterface[] = [];
+  superheroesList: SuperHero[] = [];
 
   constructor(private listService: ListService) { }
 
   ngOnInit() {
-    this.listService.getSuperheroes()
-      .subscribe((data: any) => {
-        const results: SuperHeroeInterface[] = data.results;
-        console.log(data.results[0].image.url);
-        //console.log(results[0].image.url);
-
-        const formattedResults = results.map(({ id, name, image }) => ({
+    this.listService.getSuperheroes().pipe(
+      map((results: SuperHeroResponse) => {
+        const res: ApiSuperHero[] = results.results;
+        const formattedResults: SuperHero[] = res.map(({ id, name, image}) => ({
           id,
-          name,
-          image,
+          name: name,
+          image: image.url,
         }));
+        return formattedResults;
+      })
+    ).subscribe((formattedResults) => {
         this.superheroesList = formattedResults;
         console.log(this.superheroesList);
       });
