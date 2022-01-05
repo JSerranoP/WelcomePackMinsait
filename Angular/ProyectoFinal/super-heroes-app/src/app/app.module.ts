@@ -10,9 +10,11 @@ import { HomeModule } from './home/home.module';
 import { ListModule } from './list/list.module';
 
 import { ListService } from './list/list.service';
+import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
