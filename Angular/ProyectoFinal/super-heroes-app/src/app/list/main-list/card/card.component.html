@@ -1,10 +1,12 @@
 <div *ngIf="superheroesList">
-    <h3>SuperHeros List!</h3>
-    <div class="list__content">
-        <div *ngFor="let superheroe of (superheroesList | filterNames: filter)">
-            <h4>{{ superheroe.id }} - {{ superheroe.name }}</h4>
-            <img [src]="superheroe.image" [alt]="superheroe.name" />
+    <div class="filter">
+        <label>Filtrar por nombre: </label>
+        <input type="text" [(ngModel)]="filter" placeholder="Introduzca un nombre"/>
+    </div>
+    <div class="list">
+        <div class="list__card" *ngFor="let superheroe of (superheroesList | filterNames: filter)">
+            <h4 class="list__card-title">{{superheroe.name}}</h4>
+            <img class="list__card-image" [src]="superheroe.image" [alt]="superheroe.name" />
         </div>
     </div>
-    <input type="text" [(ngModel)]="filter" />
 </div>

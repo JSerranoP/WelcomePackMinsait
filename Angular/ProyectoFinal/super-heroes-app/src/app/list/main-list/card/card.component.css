@@ -1,7 +1,38 @@
-.list__content {
+.filter {
+  margin: 20px;
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.list {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto auto auto auto auto;
-      grid-template-columns: auto auto auto auto auto;
+  -ms-grid-columns: auto auto auto auto;
+      grid-template-columns: auto auto auto auto;
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+}
+
+.list__card {
+  border: 3px solid black;
+  margin: 3px;
+  padding: 25px;
+  cursor: pointer;
+}
+
+.list__card-title {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding-bottom: 15px;
+  text-align: center;
+}
+
+.list__card-image {
+  max-width: 300px;
+  width: auto;
+  height: auto;
 }
 /*# sourceMappingURL=card.component.css.map */
