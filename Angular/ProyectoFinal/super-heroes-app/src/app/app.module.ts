@@ -12,6 +12,7 @@ import { ListModule } from './list/list.module';
 import { ListService } from './list/list.service';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 import { DetailModule } from './detail/detail.module';
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,8 @@ import { DetailModule } from './detail/detail.module';
     HttpClientModule,
     HomeModule,
     ListModule,
-    DetailModule
+    DetailModule,
+    RouterModule
   ],
   providers: [ListService],
   bootstrap: [AppComponent]

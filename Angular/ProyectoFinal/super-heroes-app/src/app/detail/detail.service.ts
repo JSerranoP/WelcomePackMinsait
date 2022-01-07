@@ -3,14 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { ApiSuperHero } from './detail.model';
 import { Observable } from 'rxjs';
 
-const superheroeUrl = 'https://superheroapi.com/api/3135974543324900/1';
-
 @Injectable()
 export class DetailService {
-
+  superheroeUrl: string = "";
+  
   constructor(private http: HttpClient) { }
 
-  getSuperheroes(): Observable<ApiSuperHero>{
-    return this.http.get(superheroeUrl) as Observable<ApiSuperHero>;
+  getSuperheroes(id:string | null): Observable<ApiSuperHero>{
+    this.superheroeUrl = 'https://superheroapi.com/api/3135974543324900/' + id;
+    return this.http.get(this.superheroeUrl) as Observable<ApiSuperHero>;
   }
 }
