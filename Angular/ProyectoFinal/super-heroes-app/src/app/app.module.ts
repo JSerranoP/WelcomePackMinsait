@@ -11,6 +11,7 @@ import { ListModule } from './list/list.module';
 
 import { ListService } from './list/list.service';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
+import { DetailModule } from './detail/detail.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
     AppPipesModule,
     HttpClientModule,
     HomeModule,
-    ListModule
+    ListModule,
+    DetailModule
   ],
   providers: [ListService],
   bootstrap: [AppComponent]

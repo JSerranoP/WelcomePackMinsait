@@ -5,6 +5,7 @@ import { BiographyComponent } from './main-detail/biography/biography.component'
 import { PowerstatsComponent } from './main-detail/powerstats/powerstats.component';
 import { WorkComponent } from './main-detail/work/work.component';
 import { ImageComponent } from './main-detail/image/image.component';
+import { DetailService } from './detail.service';
 
 
 
@@ -16,8 +17,18 @@ import { ImageComponent } from './main-detail/image/image.component';
     WorkComponent,
     ImageComponent
   ],
+  exports: [
+    MainDetailComponent,
+    BiographyComponent,
+    PowerstatsComponent,
+    WorkComponent,
+    ImageComponent
+  ],
   imports: [
     CommonModule
+  ],
+  providers: [
+    DetailService
   ]
 })
 export class DetailModule { }

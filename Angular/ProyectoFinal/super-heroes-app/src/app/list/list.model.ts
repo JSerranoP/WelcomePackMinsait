@@ -6,10 +6,10 @@ export interface ApiSuperHero {
     appearence: object;
     work: object;
     connections: object;
-    image: ApiImage;
+    image: ApiSuperHeroImage;
 }
 
-export interface ApiImage {
+export interface ApiSuperHeroImage {
     url: string;
 }
 

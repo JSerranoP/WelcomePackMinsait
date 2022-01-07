@@ -1,0 +1,59 @@
+export interface ApiSuperHero {
+    response: string;
+    id: number;
+    name: string;
+    powerstats: ApiSuperHeroPowerstats;
+    biography: ApiSuperHeroBiography;
+    appearence: ApiSuperHeroAppearance;
+    work: ApiSuperHeroWork;
+    connections: ApiSuperHeroConnections;
+    image: ApiSuperHeroImage;
+}
+
+export interface ApiSuperHeroPowerstats {
+    combat: string;
+    dutability: string;
+    intelligence: string;
+    power: string;
+    speed: string;
+    strength: string;
+}
+
+export interface ApiSuperHeroBiography {
+    aliases: string;
+    alignment: string;
+    "alter-egos": string;
+    "fisrt-appearence": string;
+    "full-name": string;
+    "place-of-birth": string;
+    publisher: string;
+}
+
+export interface ApiSuperHeroAppearance {
+    eye_color: string;
+    gender: string;
+    hair_color: string;
+    height: string;
+    race: string;
+    weight: string;
+}
+
+export interface ApiSuperHeroWork {
+    base: string;
+    occupation: string;
+}
+
+export interface ApiSuperHeroConnections {
+    "group-affiliation": string;
+    relatives: string;
+}
+
+export interface ApiSuperHeroImage {
+    url: string;
+}
+
+export interface SuperHero {
+    id: number;
+    name: string;
+    image: string;
+}

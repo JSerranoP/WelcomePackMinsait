@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { map } from 'rxjs';
+import { SuperHero, ApiSuperHero } from '../detail.model';
+import { DetailService } from '../detail.service';
 
 @Component({
   selector: 'app-main-detail',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainDetailComponent implements OnInit {
 
-  constructor() { }
+  superHero!: ApiSuperHero;
+
+  constructor(private detailService: DetailService) { }
 
   ngOnInit(): void {
+    this.detailService.getSuperheroes().subscribe((formattedResults: ApiSuperHero) => {
+      this.superHero = formattedResults;
+      console.log(this.superHero);
+    });
   }
-
 }
