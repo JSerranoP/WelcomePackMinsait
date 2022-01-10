@@ -4,7 +4,7 @@ export interface ApiSuperHero {
     name: string;
     powerstats: ApiSuperHeroPowerstats;
     biography: ApiSuperHeroBiography;
-    appearence: ApiSuperHeroAppearance;
+    appearance: ApiSuperHeroAppearance;
     work: ApiSuperHeroWork;
     connections: ApiSuperHeroConnections;
     image: ApiSuperHeroImage;
@@ -30,12 +30,12 @@ export interface ApiSuperHeroBiography {
 }
 
 export interface ApiSuperHeroAppearance {
-    eye_color: string;
+    "eye-color": string;
     gender: string;
-    hair_color: string;
-    height: string;
+    "hair-color": string;
+    height: string[];
     race: string;
-    weight: string;
+    weight: string[];
 }
 
 export interface ApiSuperHeroWork {
