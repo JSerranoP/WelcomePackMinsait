@@ -1,6 +1,7 @@
-<p>main-detail works!</p>
-
-<app-biography></app-biography>
-<app-image></app-image>
-<app-powerstats></app-powerstats>
-<app-work></app-work>
+<div class="detail">
+    <h2 class="detail__name">{{superHero.name | uppercase}}</h2>
+    <app-biography [superHeroBio]="superHero.biography"></app-biography>
+    <app-image [superHeroImg]="superHero.image"></app-image>
+    <app-powerstats></app-powerstats>
+    <app-work></app-work>
+</div>

@@ -20,10 +20,10 @@ export interface ApiSuperHeroPowerstats {
 }
 
 export interface ApiSuperHeroBiography {
-    aliases: string;
+    aliases: string[];
     alignment: string;
     "alter-egos": string;
-    "fisrt-appearence": string;
+    "first-appearance": string;
     "full-name": string;
     "place-of-birth": string;
     publisher: string;

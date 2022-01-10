@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ApiSuperHeroBiography } from '../../detail.model';
 
 @Component({
   selector: 'app-biography',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BiographyComponent implements OnInit {
 
+  @Input() superHeroBio!: ApiSuperHeroBiography;
+
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }

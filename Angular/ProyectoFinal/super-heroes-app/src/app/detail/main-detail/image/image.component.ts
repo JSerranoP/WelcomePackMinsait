@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ApiSuperHeroImage } from '../../detail.model';
 
 @Component({
   selector: 'app-image',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./image.component.scss']
 })
 export class ImageComponent implements OnInit {
+
+  @Input() superHeroImg!: ApiSuperHeroImage;
 
   constructor() { }
 

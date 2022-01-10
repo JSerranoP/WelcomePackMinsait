@@ -24,7 +24,6 @@ export class MainDetailComponent implements OnInit {
     this.detailService.getSuperheroes(this.id).subscribe((formattedResults: ApiSuperHero) => {
       this.superHero = formattedResults;
       console.log(this.superHero);
-      console.log(this.superHero.appearance.height[1]);
     });
   }
 }

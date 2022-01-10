@@ -1,1 +1,28 @@
-<p>biography works!</p>
+<div class="biography">
+    <div class="biography__container">
+        <h2 class="biography__title">Biografia: </h2>
+        <div class="biography__content">
+            <div>
+                <p class="biography__content-p"><label class="biography__content-p--bold">Nombre completo: </label> {{superHeroBio["full-name"]}} </p>
+            </div>
+            <div>
+                <p class="biography__content-p"><label class="biography__content-p--bold">Alias: </label> {{superHeroBio.aliases[0]}} </p>
+            </div>
+            <div>
+                <p class="biography__content-p"><label class="biography__content-p--bold">Alineacion: </label> {{superHeroBio.alignment}} </p>
+            </div>
+            <div>
+                <p class="biography__content-p"><label class="biography__content-p--bold">Alter egos: </label> {{superHeroBio["alter-egos"]}} </p>
+            </div>
+            <div>
+                <p class="biography__content-p"><label class="biography__content-p--bold">Primera aparición: </label> {{superHeroBio["first-appearance"]}} </p>
+            </div>
+            <div>
+                <p class="biography__content-p"><label class="biography__content-p--bold">Lugar de nacimiento: </label> {{superHeroBio["place-of-birth"]}} </p>
+            </div>
+            <div>
+                <p class="biography__content-p"><label class="biography__content-p--bold">Editorial: </label> {{superHeroBio.publisher}} </p>
+            </div>
+        </div>
+    </div>
+</div>
