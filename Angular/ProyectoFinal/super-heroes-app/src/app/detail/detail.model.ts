@@ -51,9 +51,3 @@ export interface ApiSuperHeroConnections {
 export interface ApiSuperHeroImage {
     url: string;
 }
-
-export interface SuperHero {
-    id: number;
-    name: string;
-    image: string;
-}

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs';
-import { ApiSuperHero, SuperHero, SuperHeroResponse } from '../../list.model';
+import { SuperHero, SuperHeroResponse } from '../../list.model';
 import { ListService } from '../../list.service';
 
 @Component({
