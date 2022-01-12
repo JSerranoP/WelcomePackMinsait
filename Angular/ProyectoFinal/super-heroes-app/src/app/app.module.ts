@@ -13,10 +13,12 @@ import { ListService } from './list/list.service';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 import { DetailModule } from './detail/detail.module';
 import { RouterModule } from '@angular/router';
+import { FooterComponent } from './shared/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
-    NavBarComponent
+    NavBarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
