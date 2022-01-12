@@ -12,7 +12,7 @@ export interface ApiSuperHero {
 
 export interface ApiSuperHeroPowerstats {
     combat: string;
-    dutability: string;
+    durability: string;
     intelligence: string;
     power: string;
     speed: string;

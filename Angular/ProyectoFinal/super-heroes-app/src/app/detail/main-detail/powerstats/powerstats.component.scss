@@ -1,0 +1,38 @@
+$font: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+.powerstats {
+    font-family: $font;
+    background-color: #f1f1f1;
+    padding: 64px 0;
+}
+
+.powerstats__container {
+    max-width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.powerstats__title {
+    text-align: left;
+    font-size: 28px;
+    padding: 0 40px;
+}
+
+.powerstats__content {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    align-content: space-around;
+    padding: 0 40px;
+}
+
+.powerstats__content-p {
+    color: #5a5a5a;
+    text-align: left;
+    font-size: 15px;
+    margin: 5px;
+
+    &--bold{
+        font-weight: bold;
+    }
+}

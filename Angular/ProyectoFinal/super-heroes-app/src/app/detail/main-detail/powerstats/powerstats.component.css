@@ -1,1 +1,42 @@
-/* No CSS *//*# sourceMappingURL=powerstats.component.css.map */
+.powerstats {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background-color: #f1f1f1;
+  padding: 64px 0;
+}
+
+.powerstats__container {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.powerstats__title {
+  text-align: left;
+  font-size: 28px;
+  padding: 0 40px;
+}
+
+.powerstats__content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+  padding: 0 40px;
+}
+
+.powerstats__content-p {
+  color: #5a5a5a;
+  text-align: left;
+  font-size: 15px;
+  margin: 5px;
+}
+
+.powerstats__content-p--bold {
+  font-weight: bold;
+}
+/*# sourceMappingURL=powerstats.component.css.map */

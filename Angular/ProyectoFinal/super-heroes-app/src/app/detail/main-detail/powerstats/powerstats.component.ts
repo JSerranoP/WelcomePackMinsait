@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ApiSuperHeroPowerstats } from '../../detail.model';
 
 @Component({
   selector: 'app-powerstats',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./powerstats.component.scss']
 })
 export class PowerstatsComponent implements OnInit {
+
+  @Input() superHeroPower!: ApiSuperHeroPowerstats;
 
   constructor() { }
 

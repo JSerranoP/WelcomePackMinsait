@@ -2,6 +2,6 @@
     <h2 class="detail__name">{{superHero.name | uppercase}}</h2>
     <app-biography [superHeroBio]="superHero.biography"></app-biography>
     <app-image [superHeroImg]="superHero.image"></app-image>
-    <app-powerstats></app-powerstats>
-    <app-work></app-work>
+    <app-powerstats [superHeroPower]="superHero.powerstats"></app-powerstats>
+    <app-work [superHeroWork]="superHero.work"></app-work>
 </div>

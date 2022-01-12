@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ApiSuperHeroWork } from '../../detail.model';
 
 @Component({
   selector: 'app-work',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./work.component.scss']
 })
 export class WorkComponent implements OnInit {
+
+  @Input() superHeroWork!: ApiSuperHeroWork;
 
   constructor() { }
 

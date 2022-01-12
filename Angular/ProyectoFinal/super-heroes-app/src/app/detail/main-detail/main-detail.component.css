@@ -1,1 +1,6 @@
-/* No CSS *//*# sourceMappingURL=main-detail.component.css.map */
+.detail__name {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-align: center;
+  font-size: 72px;
+}
+/*# sourceMappingURL=main-detail.component.css.map */
