@@ -1,5 +1,5 @@
 {
-  "posts": [
+  "my-creates": [
     {
       "hero": {
         "name": "SuperSuper",
@@ -11,6 +11,18 @@
         "strength": 80
       },
       "id": 1
+    },
+    {
+      "hero": {
+        "name": "Otto",
+        "combat": 1,
+        "durability": 1,
+        "intelligence": 1,
+        "power": 1,
+        "speed": 1,
+        "strength": 1
+      },
+      "id": 2
     }
   ]
 }

@@ -1,1 +1,5 @@
-<p>main-my-creates works!</p>
+<div class="list">
+    <div class="list__card" *ngFor="let mycreate of myCreatesList">
+        <h4 class="list__card-title">{{mycreate.hero.name}}</h4>
+    </div>
+</div>

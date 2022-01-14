@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { SuperHeroRegister } from './form.model';
 
-const APIFakeUrl = 'http://localhost:3000/posts';
+const APIFakeUrl = 'http://localhost:3000/my-creates';
 
 @Injectable({
   providedIn: 'root'
