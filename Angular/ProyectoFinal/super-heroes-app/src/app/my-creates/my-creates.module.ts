@@ -6,8 +6,6 @@ import { MainMyCreatesComponent } from './main-my-creates/main-my-creates.compon
 
 @NgModule({
   declarations: [
-
-  
     MainMyCreatesComponent
   ],
   imports: [

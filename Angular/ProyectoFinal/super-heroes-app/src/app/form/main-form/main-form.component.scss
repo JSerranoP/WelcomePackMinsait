@@ -1,0 +1,42 @@
+$font: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+.form__container {
+    font-family: $font;
+    max-width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 64px 0;
+    text-align: center;
+}
+
+.form__title {
+    padding: 0 40px;
+    font-size: 28px;
+}
+
+.form__fieldset {
+    display: flex;
+    border: none;
+    padding: 10px 40px;
+    font-size: 15px;
+    justify-content: space-evenly;
+    text-align: left;
+}
+
+.form__label {
+    display: inline-block;
+    width: 250px;
+    color: #5a5a5a;
+}
+
+.form__input {
+    width: 250px;
+    text-align: right;
+}
+
+.form__button {
+    text-align: center;
+    padding: 7px 40px;
+    margin: 40px 40px 0 40px;
+    cursor: pointer;
+}

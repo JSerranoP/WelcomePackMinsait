@@ -1,19 +1,16 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "hero": {
+        "name": "SuperSuper",
+        "combat": 100,
+        "durability": 80,
+        "intelligence": 80,
+        "power": 99,
+        "speed": 57,
+        "strength": 80
+      },
+      "id": 1
     }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

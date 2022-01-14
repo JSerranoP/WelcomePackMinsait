@@ -15,6 +15,7 @@ import { RouterModule } from '@angular/router';
 import { FooterComponent } from './shared/footer/footer.component';
 import { FormModule } from './form/form.module';
 import { AboutModule } from './about/about.module';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,8 @@ import { AboutModule } from './about/about.module';
     DetailModule,
     AboutModule,
     FormModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   bootstrap: [AppComponent]
 })
