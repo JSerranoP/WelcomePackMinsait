@@ -23,6 +23,30 @@
         "strength": 1
       },
       "id": 2
+    },
+    {
+      "hero": {
+        "name": "Alguien",
+        "combat": 1,
+        "durability": 2,
+        "intelligence": 3,
+        "power": 4,
+        "speed": 5,
+        "strength": 6
+      },
+      "id": 3
+    },
+    {
+      "hero": {
+        "name": "Yo",
+        "combat": 11,
+        "durability": 22,
+        "intelligence": 33,
+        "power": 44,
+        "speed": 55,
+        "strength": 66
+      },
+      "id": 4
     }
   ]
 }

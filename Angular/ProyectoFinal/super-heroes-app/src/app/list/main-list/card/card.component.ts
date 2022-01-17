@@ -25,7 +25,6 @@ export class CardComponent implements OnInit {
       )
     ).subscribe((formattedResults: SuperHero[]) => {
         this.superheroesList = formattedResults;
-        console.log(this.superheroesList);
       });
   }
 

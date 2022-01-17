@@ -6,6 +6,7 @@ import { MainFormComponent } from './form/main-form/main-form.component';
 import { MainHomeComponent } from './home/main-home/main-home.component';
 import { MainListComponent } from './list/main-list/main-list.component';
 import { MainMyCreatesComponent } from './my-creates/main-my-creates/main-my-creates.component';
+import { UpdateMyCreatesComponent } from './my-creates/update-my-creates/update-my-creates.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'about', component: MainAboutComponent },
   { path: 'form', component: MainFormComponent },
   { path: 'my-creates', component: MainMyCreatesComponent },
+  { path: 'my-creates/:id', component: UpdateMyCreatesComponent },
   { path: 'list/:id', component: MainDetailComponent },
 ];
 

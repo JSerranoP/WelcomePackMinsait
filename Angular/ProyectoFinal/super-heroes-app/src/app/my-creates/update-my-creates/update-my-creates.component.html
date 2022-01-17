@@ -1,0 +1,69 @@
+<div class="form__container">
+    <h2 class="form__title">Formulario de Registro:</h2>
+    <form novalidate (ngSubmit)="onSubmit()" [formGroup]="superHeroUpdateForm">
+        <fieldset class="form__fieldset">
+            <label class="form__label" for="name">Nombre: </label>
+            <input class="form__input" type="text" id="name" formControlName="name" />
+            <div *ngIf="!superHeroUpdateForm.get('name').valid &&
+                (superHeroUpdateForm.get('name').dirty || submitted)">
+                Has introducido mal el nombre
+            </div>
+        </fieldset>
+
+        <fieldset class="form__fieldset">
+            <label class="form__label" for="combat">Habilidad en combate: </label>
+            <input class="form__input" type="number" id="combat" formControlName="combat" />
+            <div *ngIf="!superHeroUpdateForm.get('combat').valid &&
+                (superHeroUpdateForm.get('combat').dirty || submitted)">
+                Has introducido mal la habilidad en combate
+            </div>
+        </fieldset>
+
+        <fieldset class="form__fieldset">
+            <label class="form__label" for="durability">Durabilidad: </label>
+            <input class="form__input" type="number" id="durability" formControlName="durability" />
+            <div *ngIf="!superHeroUpdateForm.get('durability').valid &&
+                (superHeroUpdateForm.get('durability').dirty || submitted)">
+                Has introducido mal la durabilidad
+            </div>
+        </fieldset>
+
+        <fieldset class="form__fieldset">
+            <label class="form__label" for="intelligence">Inteligencia: </label>
+            <input class="form__input" type="number" id="intelligence" formControlName="intelligence" />
+            <div *ngIf="!superHeroUpdateForm.get('intelligence').valid &&
+                (superHeroUpdateForm.get('intelligence').dirty || submitted)">
+                Has introducido mal la inteligencia
+            </div>
+        </fieldset>
+
+        <fieldset class="form__fieldset">
+            <label class="form__label" for="power">Poder: </label>
+            <input class="form__input" type="number" id="power" formControlName="power" />
+            <div *ngIf="!superHeroUpdateForm.get('power').valid &&
+                (superHeroUpdateForm.get('power').dirty || submitted)">
+                Has introducido mal el poder
+            </div>
+        </fieldset>
+
+        <fieldset class="form__fieldset">
+            <label class="form__label" for="speed">Velocidad: </label>
+            <input class="form__input" type="number" id="speed" formControlName="speed" />
+            <div *ngIf="!superHeroUpdateForm.get('speed').valid &&
+                (superHeroUpdateForm.get('speed').dirty || submitted)">
+                Has introducido mal la velocidad
+            </div>
+        </fieldset>
+
+        <fieldset class="form__fieldset">
+            <label class="form__label" for="strength">Fuerza: </label>
+            <input class="form__input" type="number" id="strength" formControlName="strength" />
+            <div *ngIf="!superHeroUpdateForm.get('strength').valid &&
+                (superHeroUpdateForm.get('strength').dirty || submitted)">
+                Has introducido mal la fuerza
+            </div>
+        </fieldset>
+
+        <button class="form__button" type="submit" [disabled]="!superHeroUpdateForm.valid">Modificar</button>
+    </form>
+</div>

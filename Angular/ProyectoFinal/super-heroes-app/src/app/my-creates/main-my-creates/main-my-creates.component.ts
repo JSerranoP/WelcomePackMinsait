@@ -17,8 +17,16 @@ export class MainMyCreatesComponent implements OnInit {
   ngOnInit(): void {
     this.myCreatesService.getMyCreates().subscribe((formattedResults: MyCreateResponse[]) => {
       this.myCreatesList = formattedResults;
-      console.log(this.myCreatesList[0].hero);
     });
   }
 
+  delete(id: string) {
+    this.myCreatesService.deleteMyCreate(id);
+    alert("SuperHeroe eliminado!");
+    window.location.reload();
+  }
+
+  update(id: string, newHero: SuperHeroRegister) {
+    this.myCreatesService.updateMyCreate(id, newHero);
+  }
 }

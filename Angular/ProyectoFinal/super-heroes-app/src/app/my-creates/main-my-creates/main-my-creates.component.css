@@ -1,1 +1,80 @@
-/* No CSS *//*# sourceMappingURL=main-my-creates.component.css.map */
+.my-create__container {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto auto;
+      grid-template-columns: auto auto auto auto;
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+}
+
+.my-create__card {
+  border: 3px solid black;
+  margin: 3px;
+  padding: 25px;
+}
+
+.my-create__card-title {
+  font-size: 28px;
+  text-align: center;
+  margin: 0;
+  padding-bottom: 20px;
+}
+
+.my-create-powerstats__content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+  padding: 0 40px;
+}
+
+.my-create-powerstats__content-p {
+  color: #5a5a5a;
+  text-align: left;
+  font-size: 13px;
+  margin: 5px;
+}
+
+.my-create-powerstats__content-p--bold {
+  font-weight: bold;
+}
+
+.my-create__button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.my-create__button {
+  margin-top: 20px;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.my-create__button--edit {
+  background-color: lightgreen;
+}
+
+.my-create__button--delete {
+  background-color: #ff0000;
+}
+/*# sourceMappingURL=main-my-creates.component.css.map */

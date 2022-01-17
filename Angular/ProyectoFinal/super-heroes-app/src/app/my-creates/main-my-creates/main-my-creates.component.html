@@ -1,5 +1,31 @@
-<div class="list">
-    <div class="list__card" *ngFor="let mycreate of myCreatesList">
-        <h4 class="list__card-title">{{mycreate.hero.name}}</h4>
+<div class="my-create__container">
+    <div class="my-create__card" *ngFor="let mycreate of myCreatesList">
+        <h2 class="my-create__card-title">{{mycreate.hero.name}}</h2>
+        <div>
+            <div class="my-create-powerstats__content">
+                <div>
+                    <p class="my-create-powerstats__content-p"><label class="my-create-powerstats__content-p--bold">Combate: </label> {{mycreate.hero.combat}} </p>
+                </div>
+                <div>
+                    <p class="my-create-powerstats__content-p"><label class="my-create-powerstats__content-p--bold">Durabilidad: </label> {{mycreate.hero.durability}} </p>
+                </div>
+                <div>
+                    <p class="my-create-powerstats__content-p"><label class="my-create-powerstats__content-p--bold">Inteligencia: </label> {{mycreate.hero.intelligence}} </p>
+                </div>
+                <div>
+                    <p class="my-create-powerstats__content-p"><label class="my-create-powerstats__content-p--bold">Poder: </label> {{mycreate.hero.power}} </p>
+                </div>
+                <div>
+                    <p class="my-create-powerstats__content-p"><label class="my-create-powerstats__content-p--bold">Velocidad: </label> {{mycreate.hero.speed}} </p>
+                </div>
+                <div>
+                    <p class="my-create-powerstats__content-p"><label class="-my-createpowerstats__content-p--bold">Fuerza: </label> {{mycreate.hero.strength}} </p>
+                </div>
+            </div>
+            <div class="my-create__button-container">
+                <button class="my-create__button my-create__button--edit" [routerLink]="['/my-creates/', mycreate.id]">Editar</button>
+                <button class="my-create__button my-create__button--delete" (click)="delete(mycreate.id)">Eliminar</button>
+            </div>
+        </div>
     </div>
 </div>

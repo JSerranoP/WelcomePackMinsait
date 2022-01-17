@@ -5,7 +5,6 @@
     </div>
     <div class="list">
         <div class="list__card" *ngFor="let superheroe of (superheroesList | filterNames: filter)" [routerLink]="['/list/', superheroe.id]">
-            <a ></a>
             <h4 class="list__card-title">{{superheroe.name}}</h4>
             <img class="list__card-image" [src]="superheroe.image" [alt]="superheroe.name" />
         </div>
