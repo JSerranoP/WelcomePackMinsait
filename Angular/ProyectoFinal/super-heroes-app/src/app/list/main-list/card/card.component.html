@@ -3,8 +3,33 @@
         <label>Filtrar por nombre: </label>
         <input type="text" [(ngModel)]="filter" placeholder="Introduzca un nombre"/>
     </div>
+    <div class="buttons-container">
+        <button class="list__button" (click) = "prevPage()">Anterior</button>
+        <a class="list__linkPage" (click) = setPage(0)>0</a>
+        <a class="list__linkPage" (click) = setPage(1)>1</a>
+        <a class="list__linkPage" (click) = setPage(2)>2</a>
+        <a class="list__linkPage" (click) = setPage(3)>3</a>
+        <a class="list__linkPage" (click) = setPage(4)>4</a>
+        <a class="list__linkPage" (click) = setPage(5)>5</a>
+        <a class="list__linkPage" (click) = setPage(6)>6</a>
+        <a class="list__linkPage" (click) = setPage(7)>7</a>
+        <a class="list__linkPage" (click) = setPage(8)>8</a>
+        <a class="list__linkPage" (click) = setPage(9)>9</a>
+        <a class="list__linkPage" (click) = setPage(10)>10</a>
+        <a class="list__linkPage" (click) = setPage(11)>11</a>
+        <a class="list__linkPage" (click) = setPage(12)>12</a>
+        <a class="list__linkPage" (click) = setPage(13)>13</a>
+        <a class="list__linkPage" (click) = setPage(14)>14</a>
+        <a class="list__linkPage" (click) = setPage(15)>15</a>
+        <a class="list__linkPage" (click) = setPage(16)>16</a>
+        <a class="list__linkPage" (click) = setPage(17)>17</a>
+        <a class="list__linkPage" (click) = setPage(18)>18</a>
+        <a class="list__linkPage" (click) = setPage(19)>19</a>
+        <a class="list__linkPage" (click) = setPage(20)>20</a>
+        <button class="list__button" (click) = "nextPage()">Siguiente</button>
+    </div>
     <div class="list">
-        <div class="list__card" *ngFor="let superheroe of (superheroesList | filterNames: filter)" [routerLink]="['/list/', superheroe.id]">
+        <div class="list__card" *ngFor="let superheroe of (superheroesList | filterNames: filter) | paginate: page" [routerLink]="['/list/', superheroe.id]">
             <h4 class="list__card-title">{{superheroe.name}}</h4>
             <img class="list__card-image" [src]="superheroe.image" [alt]="superheroe.name" />
         </div>

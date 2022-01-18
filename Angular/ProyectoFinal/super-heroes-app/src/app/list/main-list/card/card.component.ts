@@ -12,6 +12,7 @@ export class CardComponent implements OnInit {
 
   superheroesList: SuperHero[] = [];
   filter: string = '';
+  page: number = 0;
 
   constructor(private listService: ListService) { }
 
@@ -28,4 +29,15 @@ export class CardComponent implements OnInit {
       });
   }
 
+  nextPage() {
+    this.page += 1;
+  }
+
+  prevPage() {
+    this.page -= 1;
+  }
+
+  setPage(newPage: number) {
+    this.page = newPage;
+  }
 }
