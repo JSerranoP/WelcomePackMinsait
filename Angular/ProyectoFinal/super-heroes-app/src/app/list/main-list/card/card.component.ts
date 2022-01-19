@@ -10,14 +10,14 @@ import { ListService } from '../../list.service';
 })
 export class CardComponent implements OnInit {
 
-  superheroesList: SuperHero[] = [];
+  superHerosList: SuperHero[] = [];
   filter: string = '';
   page: number = 0;
 
   constructor(private listService: ListService) { }
 
   ngOnInit() {
-    this.listService.getSuperheroes().pipe(
+    this.listService.getSuperHeros().pipe(
       map((results: SuperHeroResponse) => results.results.map(({ id, name, image}) => ({
           id,
           name: name,
@@ -25,7 +25,7 @@ export class CardComponent implements OnInit {
         }))
       )
     ).subscribe((formattedResults: SuperHero[]) => {
-        this.superheroesList = formattedResults;
+        this.superHerosList = formattedResults;
       });
   }
 

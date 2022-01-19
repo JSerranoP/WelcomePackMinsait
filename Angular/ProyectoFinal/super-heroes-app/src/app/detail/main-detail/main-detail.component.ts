@@ -20,7 +20,7 @@ export class MainDetailComponent implements OnInit {
       this.id = params.get('id');
     });
 
-    this.detailService.getSuperheroes(this.id).subscribe((formattedResults: ApiSuperHero) => {
+    this.detailService.getSuperHeros(this.id).subscribe((formattedResults: ApiSuperHero) => {
       this.superHero = formattedResults;
     });
   }

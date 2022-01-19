@@ -7,8 +7,6 @@ import { WorkComponent } from './main-detail/work/work.component';
 import { ImageComponent } from './main-detail/image/image.component';
 import { DetailService } from './detail.service';
 
-
-
 @NgModule({
   declarations: [
     MainDetailComponent,

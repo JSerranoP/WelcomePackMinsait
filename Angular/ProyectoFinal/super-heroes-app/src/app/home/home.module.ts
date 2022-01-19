@@ -5,8 +5,6 @@ import { DefinicionComponent } from './main-home/definicion/definicion.component
 import { RequisitosComponent } from './main-home/requisitos/requisitos.component';
 import { FuncionamientoWebComponent } from './main-home/funcionamiento-web/funcionamiento-web.component';
 
-
-
 @NgModule({
   declarations: [
     MainHomeComponent,

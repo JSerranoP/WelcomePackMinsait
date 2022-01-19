@@ -4,8 +4,6 @@ import { MainFormComponent } from './main-form/main-form.component';
 import { FormService } from './form.service';
 import { ReactiveFormsModule } from '@angular/forms';
 
-
-
 @NgModule({
   declarations: [
     MainFormComponent

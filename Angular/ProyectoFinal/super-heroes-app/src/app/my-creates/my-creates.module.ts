@@ -6,8 +6,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UpdateMyCreatesComponent } from './update-my-creates/update-my-creates.component';
 import { RouterModule } from '@angular/router';
 
-
-
 @NgModule({
   declarations: [
     MainMyCreatesComponent,

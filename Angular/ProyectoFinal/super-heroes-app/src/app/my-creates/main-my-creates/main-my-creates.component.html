@@ -1,30 +1,32 @@
-<div class="my-create__container">
-    <div class="my-create__card" *ngFor="let mycreate of myCreatesList">
-        <h2 class="my-create__card-title">{{mycreate.hero.name}}</h2>
-        <div>
-            <div class="my-create-powerstats__content">
-                <div>
-                    <p class="my-create-powerstats__content-p"><label class="my-create-powerstats__content-p--bold">Combate: </label> {{mycreate.hero.combat}} </p>
+<div *ngIf="myCreatesList">
+    <div class="my-create__container">
+        <div class="my-create__card" *ngFor="let myCreate of myCreatesList">
+            <h2 class="my-create__card-title"> {{myCreate.hero.name}} </h2>
+            <div>
+                <div class="my-create-powerstats__content">
+                    <div>
+                        <p class="my-create-powerstats__content-p"><label class="my-create-powerstats__content-p--bold">Combate: </label> {{myCreate.hero.combat}} </p>
+                    </div>
+                    <div>
+                        <p class="my-create-powerstats__content-p"><label class="my-create-powerstats__content-p--bold">Durabilidad: </label> {{myCreate.hero.durability}} </p>
+                    </div>
+                    <div>
+                        <p class="my-create-powerstats__content-p"><label class="my-create-powerstats__content-p--bold">Inteligencia: </label> {{myCreate.hero.intelligence}} </p>
+                    </div>
+                    <div>
+                        <p class="my-create-powerstats__content-p"><label class="my-create-powerstats__content-p--bold">Poder: </label> {{myCreate.hero.power}} </p>
+                    </div>
+                    <div>
+                        <p class="my-create-powerstats__content-p"><label class="my-create-powerstats__content-p--bold">Velocidad: </label> {{myCreate.hero.speed}} </p>
+                    </div>
+                    <div>
+                        <p class="my-create-powerstats__content-p"><label class="-my-createpowerstats__content-p--bold">Fuerza: </label> {{myCreate.hero.strength}} </p>
+                    </div>
                 </div>
-                <div>
-                    <p class="my-create-powerstats__content-p"><label class="my-create-powerstats__content-p--bold">Durabilidad: </label> {{mycreate.hero.durability}} </p>
+                <div class="my-create__button-container">
+                    <button class="my-create__button my-create__button--edit" [routerLink]="['/my-creates/', myCreate.id]">Editar</button>
+                    <button class="my-create__button my-create__button--delete" (click)="delete(myCreate.id)">Eliminar</button>
                 </div>
-                <div>
-                    <p class="my-create-powerstats__content-p"><label class="my-create-powerstats__content-p--bold">Inteligencia: </label> {{mycreate.hero.intelligence}} </p>
-                </div>
-                <div>
-                    <p class="my-create-powerstats__content-p"><label class="my-create-powerstats__content-p--bold">Poder: </label> {{mycreate.hero.power}} </p>
-                </div>
-                <div>
-                    <p class="my-create-powerstats__content-p"><label class="my-create-powerstats__content-p--bold">Velocidad: </label> {{mycreate.hero.speed}} </p>
-                </div>
-                <div>
-                    <p class="my-create-powerstats__content-p"><label class="-my-createpowerstats__content-p--bold">Fuerza: </label> {{mycreate.hero.strength}} </p>
-                </div>
-            </div>
-            <div class="my-create__button-container">
-                <button class="my-create__button my-create__button--edit" [routerLink]="['/my-creates/', mycreate.id]">Editar</button>
-                <button class="my-create__button my-create__button--delete" (click)="delete(mycreate.id)">Eliminar</button>
             </div>
         </div>
     </div>

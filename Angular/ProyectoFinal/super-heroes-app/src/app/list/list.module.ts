@@ -7,7 +7,6 @@ import { AppPipesModule } from '../app-pipes.module';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
-
 @NgModule({
   declarations: [
     MainListComponent,

@@ -1,4 +1,4 @@
-<div *ngIf="superheroesList">
+<div *ngIf="superHerosList">
     <div class="filter">
         <label>Filtrar por nombre: </label>
         <input type="text" [(ngModel)]="filter" placeholder="Introduzca un nombre"/>
@@ -29,9 +29,9 @@
         <button class="list__button" (click) = "nextPage()">Siguiente</button>
     </div>
     <div class="list">
-        <div class="list__card" *ngFor="let superheroe of (superheroesList | filterNames: filter) | paginate: page" [routerLink]="['/list/', superheroe.id]">
-            <h4 class="list__card-title">{{superheroe.name}}</h4>
-            <img class="list__card-image" [src]="superheroe.image" [alt]="superheroe.name" />
+        <div class="list__card" *ngFor="let superHero of (superHerosList | filterNames: filter) | paginate: page" [routerLink]="['/list/', superHero.id]">
+            <h4 class="list__card-title">{{superHero.name}}</h4>
+            <img class="list__card-image" [src]="superHero.image" [alt]="superHero.name" />
         </div>
     </div>
 </div>

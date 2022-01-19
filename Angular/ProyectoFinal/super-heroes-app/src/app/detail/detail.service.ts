@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
 export class DetailService {
   constructor(private http: HttpClient) { }
 
-  getSuperheroes(id:string | null): Observable<ApiSuperHero>{
-    const superheroeUrl = 'https://superheroapi.com/api/3135974543324900/' + id;
-    return this.http.get(superheroeUrl) as Observable<ApiSuperHero>;
+  getSuperHeros(id:string | null): Observable<ApiSuperHero>{
+    const superHeroUrl = 'https://superheroapi.com/api/3135974543324900/' + id;
+    return this.http.get(superHeroUrl) as Observable<ApiSuperHero>;
   }
 }
