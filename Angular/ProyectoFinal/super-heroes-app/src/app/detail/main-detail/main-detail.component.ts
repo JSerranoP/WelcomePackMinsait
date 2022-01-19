@@ -18,10 +18,9 @@ export class MainDetailComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       this.id = params.get('id');
-    });
-
-    this.detailService.getSuperHeros(this.id).subscribe((formattedResults: ApiSuperHero) => {
-      this.superHero = formattedResults;
+      this.detailService.getSuperHeros(this.id).subscribe((formattedResults: ApiSuperHero) => {
+        this.superHero = formattedResults;
+      });
     });
   }
 }
