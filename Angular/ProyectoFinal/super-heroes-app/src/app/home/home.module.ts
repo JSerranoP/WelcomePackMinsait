@@ -4,6 +4,7 @@ import { MainHomeComponent } from './main-home/main-home.component';
 import { DefinicionComponent } from './main-home/definicion/definicion.component';
 import { RequisitosComponent } from './main-home/requisitos/requisitos.component';
 import { FuncionamientoWebComponent } from './main-home/funcionamiento-web/funcionamiento-web.component';
+import { HomeRoutingModule } from './home-routing.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FuncionamientoWebComponent } from './main-home/funcionamiento-web/funci
     FuncionamientoWebComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    HomeRoutingModule
   ]
 })
 export class HomeModule { }

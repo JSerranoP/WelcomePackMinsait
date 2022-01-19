@@ -6,6 +6,7 @@ import { ListService } from './list.service';
 import { AppPipesModule } from '../app-pipes.module';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { ListRoutingModule } from './list-routing.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { RouterModule } from '@angular/router';
     CardComponent
   ],exports: [
     MainListComponent,
-    CardComponent
+    CardComponent,
+    ListRoutingModule
   ],
   imports: [
     CommonModule,

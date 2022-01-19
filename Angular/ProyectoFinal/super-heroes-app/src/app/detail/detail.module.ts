@@ -6,6 +6,7 @@ import { PowerstatsComponent } from './main-detail/powerstats/powerstats.compone
 import { WorkComponent } from './main-detail/work/work.component';
 import { ImageComponent } from './main-detail/image/image.component';
 import { DetailService } from './detail.service';
+import { DetailRoutingModule } from './detail-routing.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DetailService } from './detail.service';
     BiographyComponent,
     PowerstatsComponent,
     WorkComponent,
-    ImageComponent
+    ImageComponent,
+    DetailRoutingModule
   ],
   imports: [
     CommonModule

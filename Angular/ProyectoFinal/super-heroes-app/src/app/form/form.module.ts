@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MainFormComponent } from './main-form/main-form.component';
 import { FormService } from './form.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormRoutingModule } from './form-routing.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormRoutingModule
   ],
   providers: [
     FormService

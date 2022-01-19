@@ -5,6 +5,7 @@ import { MyCreatesService } from './my-creates.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UpdateMyCreatesComponent } from './update-my-creates/update-my-creates.component';
 import { RouterModule } from '@angular/router';
+import { MyCreatesRoutingModule } from './my-creates-routing.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    MyCreatesRoutingModule
   ],
   providers: [
     MyCreatesService

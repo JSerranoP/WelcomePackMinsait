@@ -11,12 +11,10 @@ import { UpdateMyCreatesComponent } from './my-creates/update-my-creates/update-
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: MainHomeComponent },
-  { path: 'list', component: MainListComponent },
-  { path: 'about', component: MainAboutComponent },
-  { path: 'form', component: MainFormComponent },
-  { path: 'my-creates', component: MainMyCreatesComponent },
-  { path: 'my-creates/:id', component: UpdateMyCreatesComponent },
-  { path: 'list/:id', component: MainDetailComponent },
+  { path: 'list', loadChildren: () => import ('./list/list.module').then (m => m.ListModule) },
+  { path: 'about', loadChildren: () => import ('./about/about.module').then (m => m.AboutModule) },
+  { path: 'form', loadChildren: () => import ('./form/form.module').then (m => m.FormModule) },
+  { path: 'my-creates', loadChildren: () => import ('./my-creates/my-creates.module').then (m => m.MyCreatesModule) },
 ];
 
 @NgModule({
