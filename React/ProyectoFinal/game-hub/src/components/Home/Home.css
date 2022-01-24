@@ -1,0 +1,31 @@
+.home__container {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.home__title {
+    font-size: 50px;
+}
+
+.home__container-games {
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+.home__link {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    text-decoration: none;
+    justify-content: space-between;
+    font-size: 40px;
+    color: black;
+    border: 3px solid black;
+    padding: 50px;
+}
+
+.home__image {
+    max-width: 256px;
+    height: auto;
+}
