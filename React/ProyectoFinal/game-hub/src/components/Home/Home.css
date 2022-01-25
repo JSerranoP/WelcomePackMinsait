@@ -1,6 +1,7 @@
 .home__container {
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 145px;
 }
 
 .home__title {
@@ -22,7 +23,10 @@
     font-size: 40px;
     color: black;
     border: 3px solid black;
+    border-radius: 100px;
     padding: 50px;
+    background-color: white;
+    font-weight: bold;
 }
 
 .home__image {
