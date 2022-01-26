@@ -1,0 +1,19 @@
+.board__container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    align-content: center;
+}
+
+.board__button {
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid #FFD312;
+}
+
+.board__button:hover {
+    border: 2px solid black;
+}

@@ -22,14 +22,27 @@
     justify-content: space-between;
     font-size: 40px;
     color: black;
-    border: 3px solid black;
+    border: 3px solid #FFD312;
     border-radius: 100px;
     padding: 50px;
     background-color: white;
     font-weight: bold;
+    animation: Float infinite 3s ease-in-out;
 }
 
 .home__image {
     max-width: 256px;
     height: auto;
+}
+
+@keyframes Float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }

@@ -8,6 +8,8 @@
 .header__logo {
     margin: 0 50px;
     border-radius: 100px;
+    width: 250px;
+    height: 200px;
 }
 
 .header__title {
