@@ -11,7 +11,9 @@
     height: 100px;
     text-align: center;
     cursor: pointer;
+    font-size: 35px;
     border: 2px solid #FFD312;
+    box-shadow: 3px 3px 20px 2px rgb(136, 136, 136);
 }
 
 .board__button:hover {

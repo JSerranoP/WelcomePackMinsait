@@ -15,9 +15,9 @@ export function Tictactoe() {
     if (isStarted) {
         return (
             <div className="main__container">
-                <h1 className="main__title">3 en Raya</h1>
-                <button className="main__button" onClick={() => dispatch(end())}>Dejar de jugar</button>
-                <p>Es el turno de {turn} </p>
+                <h1 className="main__title">3 EN RAYA</h1>
+                <button className="main__button main__button--not-animated" onClick={() => dispatch(end())}>Dejar de jugar</button>
+                <h4 className="main__subtitle">Es el turno de <label className="main__subtitle--bold">{turn}</label>  </h4>
                 <Board/>
             </div>
         );
