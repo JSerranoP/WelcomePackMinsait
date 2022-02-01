@@ -1,0 +1,33 @@
+.main__container {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.main__title {
+    font-size: 50px;
+}
+
+.main__button {
+    width: 250px;
+    height: 50px;
+    margin: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    animation: Float infinite 3s ease-in-out;
+}
+
+.main__button--not-animated {
+    animation: none;
+}
+
+@keyframes Float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(12px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}

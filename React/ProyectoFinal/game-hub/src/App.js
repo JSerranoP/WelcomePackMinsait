@@ -8,6 +8,7 @@ import Header from './components/Header/Header';
 
 import './App.css';
 import { Tictactoe } from './features/tictactoe/Tictactoe';
+import { Hangman } from './features/hangman/Hangman';
 
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
         <Header/>
         <Routes>
           <Route path='/tictactoe' element={<Tictactoe/>} />
-          <Route path='/hangman' element={<InConstruction/>} />
+          <Route path='/hangman' element={<Hangman/>} />
           <Route path='/sudoku' element={<InConstruction/>} />
           <Route path='/' element={<Home/>} />
         </Routes>

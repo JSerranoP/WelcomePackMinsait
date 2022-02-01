@@ -1,0 +1,19 @@
+.letter__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.letter__button {
+    width: 50px;
+    height: 50px;
+    margin: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 3px 3px 20px 2px rgb(136, 136, 136);
+    border: 2px solid #FFD312;
+}
+
+.letter__button:hover {
+    border: 2px solid black;
+}
