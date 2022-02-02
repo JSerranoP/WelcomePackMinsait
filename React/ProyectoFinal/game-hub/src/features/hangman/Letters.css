@@ -17,3 +17,9 @@
 .letter__button:hover {
     border: 2px solid black;
 }
+
+.letter__button:disabled {
+    cursor: not-allowed;
+    box-shadow: none;
+    border: 2px solid #FFD312;
+}

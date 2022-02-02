@@ -18,3 +18,10 @@
     margin: 25px;
     font-size: 25px;
 }
+
+.game__subtitle3 {
+    font-weight: bold;
+    margin: 25px;
+    font-size: 25px;
+    letter-spacing: 10px;
+}

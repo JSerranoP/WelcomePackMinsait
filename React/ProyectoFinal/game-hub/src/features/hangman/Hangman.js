@@ -16,7 +16,7 @@ export function Hangman() {
         return (
             <div className="main__container">
                 <h1 className="main__title">HANGMAN</h1>
-                <button className="main__button main__button--not-animated" onClick={() => dispatch(end())}>Dejar de jugar</button>
+                <button className="main__button main__button--not-animated" onClick={() => dispatch(end())}>Terminar partida</button>
                 <Game/>
             </div>
         );
