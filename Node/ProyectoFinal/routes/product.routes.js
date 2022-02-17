@@ -5,12 +5,12 @@ const Product = require('../models/Product');
 const router = express.Router();
 
 router.get('/', async (req, res) => {
-	try {
-		const products = await Product.find();
-		return res.status(200).json(products)
-	} catch (err) {
-		return res.status(500).json(err);
-	}
+    try {
+        const products = await Product.find();
+        return res.status(200).render('products', { title: 'Upgrade products', products });  
+    } catch (err) {
+        next(err);
+    }
 });
 
 router.post('/create', async (req, res, next) => {
