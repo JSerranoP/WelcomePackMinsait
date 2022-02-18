@@ -1,0 +1,12 @@
+.products__title {
+    text-align: center;
+}
+
+.products__list {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.products__list-item {
+    text-align: center;
+}

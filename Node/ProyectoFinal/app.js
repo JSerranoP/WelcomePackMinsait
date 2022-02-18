@@ -13,10 +13,11 @@ const PORT = process.env.PORT || 3000;
 const router = express.Router();
 
 const productsRoutes = require('./routes/product.routes')
-const usersRoutes = require('./routes/index.routes')
+const indexRoutes = require('./routes/index.routes')
+const usersRoutes = require('./routes/user.routes')
 
 app.use('/products', productsRoutes);
-app.use('/users', usersRoutes);
+app.use('/users', indexRoutes);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -50,7 +51,7 @@ app.use(passport.session());
 const path = require('path');
 
 app.set('views', path.join(__dirname, 'views'));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname + '/public/'));
 app.set('view engine', 'hbs');
 
 app.listen(PORT, () => {

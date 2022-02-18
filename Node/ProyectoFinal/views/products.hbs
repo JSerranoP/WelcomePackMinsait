@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{{title}}</title>
+        <link rel="stylesheet" type="text/css" href="stylesheets/products.css" />
     </head>
 
     <body>
@@ -10,10 +13,10 @@
                 <input type="submit" value="Logout"></input>
             </form>
         </nav>
-        <h1>Todas los productos</h1>
-        <ul>
+        <h1 class="products__title">Todos los productos</h1>
+        <ul class="products__list">
             {{#each products}}
-            <li>
+            <li class="products__list-item">
                 <h3>Name: {{ this.name }}</h3>
                 <h3>Price: {{ this.price }}</h3>
                 <h3>Description: {{ this.description }}</h3>
