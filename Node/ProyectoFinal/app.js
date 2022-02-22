@@ -17,7 +17,7 @@ const indexRoutes = require('./routes/index.routes')
 const usersRoutes = require('./routes/user.routes')
 
 app.use('/products', productsRoutes);
-app.use('/users', indexRoutes);
+app.use('/users', usersRoutes);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
