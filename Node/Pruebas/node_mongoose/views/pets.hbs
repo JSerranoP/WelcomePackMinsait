@@ -2,13 +2,19 @@
 <html>
     <head>
         <title>{{title}}</title>
+        <link rel="stylesheet" href="./css/pets.css">
     </head>
 
     <body>
-        <h1>Todas las mascotas de Upgrade Pets</h1>
-        <ul>
+        <nav>
+            <form action="/users/logout" method="POST">
+                <input type="submit" value="Logout"></input>
+            </form>
+        </nav>
+        <h1 class="pets__title">Todas las mascotas de Upgrade Pets</h1>
+        <ul class="pets__list">
             {{#each pets}}
-            <li>
+            <li class="pets__list-item">
                 <h3>Name: {{ uppercase this.name }}</h3>
                 <h3>Age: {{ this.age }}</h3>
                 <h3>Species: {{ this.species }}</h3>

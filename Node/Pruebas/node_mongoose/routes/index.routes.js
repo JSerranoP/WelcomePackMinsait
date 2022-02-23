@@ -6,4 +6,12 @@ router.get('/', (req, res, next) => {
     res.status(200).render('index', { title: 'Upgrade Hub - Handlebars Index' });
 });
 
+router.get('/register', (req, res, next) => {
+    res.render('register');
+});
+
+router.get('/login', (req, res, next) => {
+    res.render('login');
+});
+
 module.exports = router;
