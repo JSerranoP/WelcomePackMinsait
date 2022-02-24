@@ -56,37 +56,37 @@ passport.use(
             passReqToCallback: true,
         },
         async (req, email, password, done) => {
-        try {
-            // Primero buscamos si el usuario existe en nuestra DB
-            const currentUser = await User.findOne({ email: email });
-    
-            // Si NO existe el usuario, tendremos un error...
-            if (!currentUser) {
-                const error = new Error('The user does not exist!');
-                return done(error);
-            }
-    
-            // Si existe el usuario, vamos a comprobar si su password enviado coincide con el registrado
-            const isValidPassword = await bcrypt.compare(
-                password,
-                currentUser.password
-            );
-    
-            // Si el password no es correcto, enviamos un error a nuestro usuario
-            if (!isValidPassword) {
-                const error = new Error(
-                'The email & password combination is incorrect!'
+            try {
+                // Primero buscamos si el usuario existe en nuestra DB
+                const currentUser = await User.findOne({ email: email });
+        
+                // Si NO existe el usuario, tendremos un error...
+                if (!currentUser) {
+                    const error = new Error('The user does not exist!');
+                    return done(error);
+                }
+        
+                // Si existe el usuario, vamos a comprobar si su password enviado coincide con el registrado
+                const isValidPassword = await bcrypt.compare(
+                    password,
+                    currentUser.password
                 );
-                return done(error);
+        
+                // Si el password no es correcto, enviamos un error a nuestro usuario
+                if (!isValidPassword) {
+                    const error = new Error(
+                    'The email & password combination is incorrect!'
+                    );
+                    return done(error);
+                }
+        
+                // Si todo se valida correctamente, completamos el callback con el usuario
+                done(null, currentUser);
+            } catch (err) {
+                // Si hay un error, resolvemos el callback con el error
+                return done(err);
             }
-    
-            // Si todo se valida correctamente, completamos el callback con el usuario
-            done(null, currentUser);
-        } catch (err) {
-            // Si hay un error, resolvemos el callback con el error
-            return done(err);
         }
-    }
     )
 );
 

@@ -1,40 +1,35 @@
 const express = require('express');
 require('./db.js');
+const passport = require('passport');
+require('./passport'); // Requerimos nuestro archivo de configuración
+const petRoutes = require('./routes/pet.routes');
+const indexRoutes = require('./routes/index.routes');
+const userRouter = require('./routes/user.routes');
+const shelterRouter = require('./routes/shelter.routes');
+const path = require('path');
+const hbs = require('hbs');
+const mongoose = require('mongoose');
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 
 const PORT = 3000;
 const server = express();
 
-const passport = require('passport');
-require('./passport'); // Requerimos nuestro archivo de configuración
-
-const petRoutes = require('./routes/pet.routes');
-server.use('/pets', petRoutes);
-
-const indexRoutes = require('./routes/index.routes');
-server.use('/', indexRoutes);
-
-const userRouter = require('./routes/user.routes');
-server.use('/users', userRouter);
-
 server.use(express.json());
 server.use(express.urlencoded({ extended: false }));
 
-const path = require('path');
-const hbs = require('hbs');
+server.use('/', indexRoutes);
+server.use('/pets', petRoutes);
+server.use('/users', userRouter);
+server.use('/shelter', shelterRouter);
 
+server.use(express.static(path.join(__dirname, 'public')));
 server.set('views', path.join(__dirname, 'views'));
 server.set('view engine', 'hbs');
 
 hbs.registerHelper('uppercase', (str) => {
     return str.toUpperCase();
 });
-
-server.use(express.static(path.join(__dirname, 'public')));
-
-const mongoose = require('mongoose');
-const session = require('express-session');
-const MongoStore = require('connect-mongo')(session);
-
 
 server.use(
     session({

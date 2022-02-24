@@ -30,6 +30,7 @@ router.post('/login', (req, res, next) => {
         }
 
         req.logIn(user, (err) => {
+            console.log(req.session);
         // Si hay un error logeando al usuario, resolvemos el controlador
         if (err) {
             return res.render('login', { error: error.message });
@@ -45,6 +46,8 @@ router.post('/logout', (req, res, next) => {
     if (req.user) {
         // Destruimos el objeto req.user para este usuario
         req.logout();
+
+        console.log(req.session);
     
         req.session.destroy(() => {
             // Eliminamos la cookie de sesión al cancelar la sesión
