@@ -1,38 +1,33 @@
-require('dotenv').config();
-require('./db');
-require('./passport'); // Requerimos nuestro archivo de configuración
 const express = require('express');
+require('./db.js');
 const passport = require('passport');
+require('./passport'); // Requerimos nuestro archivo de configuración
+const productRoutes = require('./routes/product.routes');
+const indexRoutes = require('./routes/index.routes');
+const userRouter = require('./routes/user.routes');
+const path = require('path');
+const hbs = require('hbs');
 const mongoose = require('mongoose');
 const session = require('express-session');
-const MongoStore = require('connect-mongo');
+const MongoStore = require('connect-mongo')(session);
 
+const PORT = 3000;
 const app = express();
-const PORT = process.env.PORT || 3000;
-
-const router = express.Router();
-
-const productsRoutes = require('./routes/product.routes')
-const indexRoutes = require('./routes/index.routes')
-const usersRoutes = require('./routes/user.routes')
-
-app.use('/products', productsRoutes);
-app.use('/users', usersRoutes);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use('*', (req, res, next) => {
-    const error = new Error('Route not found'); 
-    error.status = 404;
-    next(error); // Lanzamos la función next() con un error
-});
+app.use('/', indexRoutes);
+app.use('/products', productRoutes);
+app.use('/users', userRouter);
 
-app.use((err, req, res, next) => {
-    return res.status(err.status || 500).json(err.message || 'Unexpected error');
-});
+app.use(express.static(path.join(__dirname, 'public')));
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'hbs');
 
-app.use('/', router);
+hbs.registerHelper('uppercase', (str) => {
+    return str.toUpperCase();
+});
 
 app.use(
     session({
@@ -42,18 +37,28 @@ app.use(
         cookie: {
             maxAge: 3600000, // Milisegundos de duración de nuestra cookie, en este caso será una hora.
         },
-        store: MongoStore.create({ mongoUrl: "mongodb://localhost:27017/proyecto_final'"}),
+        store: new MongoStore({ mongooseConnection: mongoose.connection }),
     })
 );
-app.use(passport.initialize())
+
+app.use(passport.initialize());
 app.use(passport.session());
 
-const path = require('path');
+// Crearemos un middleware para cuando no encontremos la ruta que busquemos
+app.use('*', (req, res, next) => {
+    const error = new Error('Route not found'); 
+    error.status = 404;
+    next(error); // Lanzamos la función next() con un error
+});
 
-app.set('views', path.join(__dirname, 'views'));
-app.use(express.static(__dirname + '/public/'));
-app.set('view engine', 'hbs');
+// Si se lanza la función
+app.use((err, req, res, next) => {
+    return res.status(err.status || 500).render('error', {
+        message: err.message || 'Unexpected error',
+        status: err.status || 500,
+    });
+});
 
 app.listen(PORT, () => {
-    console.log(`Listening in <http://localhost>:${PORT}`);
+    console.log(`Server running in <http://localhost>:${PORT}`);
 });
