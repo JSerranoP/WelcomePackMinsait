@@ -1,27 +1,47 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Upgrade Register</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Register</title>
+        <link rel="stylesheet" type="text/css" href="stylesheets/header.css"/>
+        <link rel="stylesheet" type="text/css" href="stylesheets/footer.css"/>
+        <link rel="stylesheet" type="text/css" href="stylesheets/register.css"/>
     </head>
 
     <body>
-        <h1>Register</h1>
-        <form action="/users/register" method="POST">
-            <label for="email">
-            <p>Email</p>
-            <input type="text" name="email">
-            </label>
+        <header class="header">
+            <a href="/"><img class="header__logo" src="https://t4.ftcdn.net/jpg/03/43/35/09/360_F_343350922_HKl2JXHSwagbkT0okcJUVGn109yjKsjR.jpg" alt="logo"></a>
+        </header>
+        <div class="register">
+            <form action="/users/register" method="POST">
+                <div class="register__form">
+                    <h1 class="register__title">Crea tu cuenta</h1>
+                    <hr>
 
-            <label for="password">
-            <p>Password</p>
-            <input type="password" name="password">
-            </label>
+                    <label for="email"><b>Correo electrónico</b></label>
+                    <input class="register__form-input" placeholder="Escribe una dirección de correo electronico" type="text" name="email">
+                    
 
-            <input type="submit" value="Register now!">
+                    <label for="password"><b>Contraseña</b></label>
+                    <input class="register__form-input" placeholder="Escribe una contraseña" type="password" name="password">
+                    <hr>
 
-            {{#if error}}
-            <p style="color: red;">{{error}}</p>
-            {{/if}}
-        </form>
+                    <input class="register__form-button" type="submit" value="Crear cuenta">
+
+                    {{#if error}}
+                        <p style="color: red;">{{error}}</p>
+                    {{/if}}
+                    <hr>
+                    
+                    <div class="register__signin">
+                        <p>¿Ya tienes una cuenta? <a href="/login">Inicia sesion</a>.</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <footer class="footer">
+            <p class="footer__content">Copyright © Todos los derechos reservados. All rights reserved.</p>
+        </footer>
     </body>
 </html>

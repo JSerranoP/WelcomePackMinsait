@@ -1,27 +1,48 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Upgrade Login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Log in</title>
+        <link rel="stylesheet" type="text/css" href="stylesheets/header.css"/>
+        <link rel="stylesheet" type="text/css" href="stylesheets/footer.css"/>
+        <link rel="stylesheet" type="text/css" href="stylesheets/login.css"/>
     </head>
 
     <body>
-        <h1>Login</h1>
-        <form action="/users/login" method="POST">
-            <label for="email">
-            <p>Email</p>
-            <input type="text" name="email">
-            </label>
+        <header class="header">
+            <a href="/"><img class="header__logo" src="https://t4.ftcdn.net/jpg/03/43/35/09/360_F_343350922_HKl2JXHSwagbkT0okcJUVGn109yjKsjR.jpg" alt="logo"></a>
+        </header>
+        <div class="login">
+            <form action="/users/login" method="POST">
+                <div class="login__form">
+                    <h1 class="login__title">Inicia sesión</h1>
+                    <hr>
 
-            <label for="password">
-            <p>Password</p>
-            <input type="password" name="password">
-            </label>
+                    <label for="email"><b>Correo electrónico</b></label>
+                    <input class="login__form-input" placeholder="Escribe una dirección de correo electronico" type="text" name="email">
+                    
 
-            <input type="submit" value="Login now!">
+                    <label for="password"><b>Contraseña</b></label>
+                    <input class="login__form-input" placeholder="Escribe una contraseña" type="password" name="password">
+                    <hr>
 
-            {{#if error}}
-            <p style="color: red;">{{error}}</p>
-            {{/if}}
-        </form>
+                    <input class="login__form-button" type="submit" value="Iniciar sesión">
+
+                    {{#if error}}
+                        <p style="color: red;">{{error}}</p>
+                    {{/if}}
+                    <hr>
+                    
+                    <div class="login__register">
+                        <p>¿No tienes cuenta todavía? </p>
+                        <a href="/register"><input class="login__register-button" value="Crear cuenta"></a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <footer class="footer">
+            <p class="footer__content">Copyright © Todos los derechos reservados. All rights reserved.</p>
+        </footer>
     </body>
 </html>

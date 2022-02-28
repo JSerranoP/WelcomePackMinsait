@@ -14,10 +14,10 @@
             <a href="/"><img class="header__logo" src="https://t4.ftcdn.net/jpg/03/43/35/09/360_F_343350922_HKl2JXHSwagbkT0okcJUVGn109yjKsjR.jpg" alt="logo"></a>
             <h1 class="header__title">E-Commerce</h1>
             <div class="header__links">
-                <a class="header__link" href="/register">Register</a>
-                <a class="header__link" href="/login">Log in</a>
+                <a class="header__link" href="/register">Registrarse</a>
+                <a class="header__link" href="/login">Iniciar sesion</a>
                 <form class="header__link" action="/users/logout" method="POST">
-                    <input type="submit" value="Logout"></input>
+                    <input type="submit" value="Cerrar sesion"></input>
                 </form>
             </div>
         </header>
@@ -27,9 +27,9 @@
                 {{#each products}}
                 <a class="products__list-item" href="/products/{{ this.id }}">
                     <li>
-                        <h3 class="products__list-item-title"><span class="products__list-item-title--bold">Name: </span>{{ this.name }}</h3>
-                        <h3 class="products__list-item-title"><span class="products__list-item-title--bold">Price: </span> {{ this.price }}</h3>
-                        <h3 class="products__list-item-title"><span class="products__list-item-title--bold">Description: </span> {{ this.description }}</h3>
+                        <h3 class="products__list-item-title"><span class="products__list-item-title--bold">Nombre: </span>{{ this.name }}</h3>
+                        <h3 class="products__list-item-title"><span class="products__list-item-title--bold">Precio: </span> {{ this.price }}</h3>
+                        <h3 class="products__list-item-title"><span class="products__list-item-title--bold">Descripcion: </span> {{ this.description }}</h3>
                     </li>
                 </a>
                 {{/each}}

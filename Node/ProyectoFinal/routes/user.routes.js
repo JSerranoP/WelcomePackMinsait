@@ -18,7 +18,7 @@ router.post('/register', (req, res, next) => {
             }
 
             // Si no hay error, redijimos a los usuarios a la ruta que queramos
-            return res.redirect('/pets');
+            return res.redirect('/products');
         });
     })(req, res, next);
 });
@@ -37,7 +37,7 @@ router.post('/login', (req, res, next) => {
         }
 
         // Si no hay error, redijimos a los usuarios a la ruta que queramos
-        return res.redirect('/pets');
+        return res.redirect('/products');
         });
     })(req, res, next);
 });
