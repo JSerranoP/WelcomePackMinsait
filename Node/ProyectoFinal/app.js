@@ -37,7 +37,10 @@ app.use(
         cookie: {
             maxAge: 3600000, // Milisegundos de duración de nuestra cookie, en este caso será una hora.
         },
-        store: new MongoStore({ mongooseConnection: mongoose.connection }),
+        store: new MongoStore({ 
+            mongooseConnection: mongoose.connection,
+            collection: 'sessions' 
+        }),
     })
 );
 

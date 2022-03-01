@@ -51,41 +51,41 @@ passport.use(
     'login',
     new LocalStrategy(
         {
-        usernameField: 'email',
-        passwordField: 'password',
-        passReqToCallback: true,
+            usernameField: 'email',
+            passwordField: 'password',
+            passReqToCallback: true,
         },
         async (req, email, password, done) => {
-        try {
-          // Primero buscamos si el usuario existe en nuestra DB
-            const currentUser = await User.findOne({ email: email });
+            try {
+            // Primero buscamos si el usuario existe en nuestra DB
+                const currentUser = await User.findOne({ email: email });
 
-            // Si NO existe el usuario, tendremos un error...
-            if (!currentUser) {
-            const error = new Error('The user does not exist!');
-            return done(error);
+                // Si NO existe el usuario, tendremos un error...
+                if (!currentUser) {
+                    const error = new Error('The user does not exist!');
+                    return done(error);
+                }
+
+            // Si existe el usuario, vamos a comprobar si su password enviado coincide con el registrado
+                const isValidPassword = await bcrypt.compare(
+                    password,
+                    currentUser.password
+                );
+
+            // Si el password no es correcto, enviamos un error a nuestro usuario
+                if (!isValidPassword) {
+                    const error = new Error(
+                        'The email & password combination is incorrect!'
+                    );
+                    return done(error);
+                }
+
+                // Si todo se valida correctamente, completamos el callback con el usuario
+                done(null, currentUser);
+            } catch (err) {
+                // Si hay un error, resolvemos el callback con el error
+                return done(err);
             }
-
-          // Si existe el usuario, vamos a comprobar si su password enviado coincide con el registrado
-            const isValidPassword = await bcrypt.compare(
-            password,
-            currentUser.password
-            );
-
-          // Si el password no es correcto, enviamos un error a nuestro usuario
-            if (!isValidPassword) {
-            const error = new Error(
-                'The email & password combination is incorrect!'
-            );
-            return done(error);
-            }
-
-          // Si todo se valida correctamente, completamos el callback con el usuario
-            done(null, currentUser);
-        } catch (err) {
-          // Si hay un error, resolvemos el callback con el error
-            return done(err);
-        }
         }
     )
 );
@@ -96,11 +96,8 @@ passport.serializeUser((user, done) => {
 });
 
   // Esta función buscará un usuario dada su _id en la DB y populará req.user si existe
-passport.deserializeUser(async (userId, done) => {
-    try {
-        const existingUser = User.findById(userId);
-        return done(null, existingUser);
-    } catch (err) {
-        return done(err);
-    }
+passport.deserializeUser(function(id, done) {
+    User.findById(id, function(err, user) {
+        done(err, user);
+    });
 });

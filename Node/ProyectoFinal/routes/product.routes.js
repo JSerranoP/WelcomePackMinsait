@@ -16,13 +16,13 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
         const id = req.params.id;
-        const pet = await Product.findById(id);
+        const product = await Product.findById(id);
             
         return res
         .status(200)
-        .render('product', { title: 'Upgrade single product', pet: pet, id: id });  
-        } catch (err) {
-            next(err);
+        .render('product', { title: 'Upgrade single product', product: product, id: id });  
+    } catch (err) {
+        next(err);
     }
 });
 
