@@ -6,7 +6,7 @@
         <title>{{title}}</title>
         <link rel="stylesheet" type="text/css" href="stylesheets/header.css"/>
         <link rel="stylesheet" type="text/css" href="stylesheets/footer.css"/>
-        <link rel="stylesheet" type="text/css" href="stylesheets/products.css" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/search.css" />
     </head>
 
     <body>
@@ -21,19 +21,15 @@
                 </form>
             </div>
         </header>
-        <div class="products">
-            <h1 class="products__title">Todos los productos</h1>
-            <form class="header__link" action="/products/search" method="GET">
-                    <input placeholder="Busque un producto" type="text" name="search"></input>
-                    <input type="submit" value="Buscar"></input>
-            </form>
-            <ul class="products__list">
+        <div class="search">
+            <h1 class="search__title">Productos que coinciden con su búsqueda: </h1>
+            <ul class="search__list">
                 {{#each products}}
-                <a class="products__list-item" href="/products/{{ this.id }}">
+                <a class="search__list-item" href="/products/{{ this.id }}">
                     <li>
-                        <h3 class="products__list-item-title"><span class="products__list-item-title--bold">Nombre: </span>{{ this.name }}</h3>
-                        <h3 class="products__list-item-title"><span class="products__list-item-title--bold">Precio: </span> {{ this.price }}</h3>
-                        <h3 class="products__list-item-title"><span class="products__list-item-title--bold">Descripcion: </span> {{ this.description }}</h3>
+                        <h3 class="search__list-item-title"><span class="search__list-item-title--bold">Nombre: </span>{{ this.name }}</h3>
+                        <h3 class="search__list-item-title"><span class="search__list-item-title--bold">Precio: </span> {{ this.price }}</h3>
+                        <h3 class="search__list-item-title"><span class="search__list-item-title--bold">Descripcion: </span> {{ this.description }}</h3>
                     </li>
                 </a>
                 {{/each}}

@@ -5,13 +5,21 @@
     padding: 16px;
 }
 
+.register__form-inputs {
+    display: flex;
+}
+
 .register__form-input {
     width: 90%;
-    padding: 20px;
+    padding: 15px;
     margin: 5px 0 22px 0;
     display: inline-block;
     border: none;
     background: #f1f1f1;
+}
+
+.register__form-input--half {
+    width: 80%;
 }
 
 hr {

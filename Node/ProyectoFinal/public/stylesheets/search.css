@@ -1,0 +1,29 @@
+.search {
+    margin: 20px;
+}
+
+.search__title {
+    text-align: center;
+}
+
+.search__list {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.search__list-item {
+    list-style: none;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid #f44336;
+    text-decoration: none;
+    color: black;
+}
+
+.search__list-item-title {
+    font-weight: normal;
+}
+
+.search__list-item-title--bold {
+    font-weight: bold;
+}

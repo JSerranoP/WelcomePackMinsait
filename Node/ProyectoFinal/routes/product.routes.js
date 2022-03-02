@@ -4,7 +4,7 @@ const Product = require('../models/Product');
 
 const router = express.Router();
 
-router.get('/', async (req, res) => {
+router.get('/', async (req, res, next) => {
     try {
         const products = await Product.find();
         return res.status(200).render('products', { title: 'Upgrade products', products });  
@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/:id', async (req, res, next) => {
     try {
         const id = req.params.id;
         const product = await Product.findById(id);
@@ -21,6 +21,17 @@ router.get('/:id', async (req, res) => {
         return res
         .status(200)
         .render('product', { title: 'Upgrade single product', product: product, id: id });  
+    } catch (err) {
+        next(err);
+    }
+});
+
+router.get('/search', async (req, res, next) => {
+    try {
+        const search = req.params.search;
+        console.log(search);
+        const products = await Product.find( {name: search});
+        return res.status(200).render('search', { title: 'Upgrade products', products });  
     } catch (err) {
         next(err);
     }

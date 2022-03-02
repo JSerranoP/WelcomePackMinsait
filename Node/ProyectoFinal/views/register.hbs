@@ -19,12 +19,31 @@
                     <h1 class="register__title">Crea tu cuenta</h1>
                     <hr>
 
+                    <div class="register__form-inputs">
+                        <div>
+                            <label for="name"><b>Nombre</b></label>
+                            <input class="register__form-input register__form-input--half" placeholder="Escriba su nombre" type="text" name="name">
+                        </div>
+                        <div>
+                            <label for="surname"><b>Apellidos</b></label>
+                            <input class="register__form-input register__form-input--half" placeholder="Escriba sus apellidos" type="text" name="surname">
+                        </div>
+                    </div>
+
                     <label for="email"><b>Correo electrónico</b></label>
-                    <input class="register__form-input" placeholder="Escribe una dirección de correo electronico" type="text" name="email">
+                    <input class="register__form-input" placeholder="Escriba su dirección de correo electronico" type="text" name="email">
                     
+                    <label for="phone_number"><b>Telefono</b></label>
+                    <input class="register__form-input" placeholder="Escriba su telefono" type="tel" name="phone_number">
 
                     <label for="password"><b>Contraseña</b></label>
-                    <input class="register__form-input" placeholder="Escribe una contraseña" type="password" name="password">
+                    <input class="register__form-input" placeholder="Escriba su contraseña" type="password" name="password">
+                    
+                    <label for="repeat_password"><b>Confirma contraseña</b></label>
+                    <input class="register__form-input" placeholder="Repita su contraseña" type="password" name="repeat_password">
+
+                    <label for="country"><b>Pais</b></label>
+                    <input class="register__form-input" placeholder="Escriba su pais" type="text" name="country">
                     <hr>
 
                     <input class="register__form-button" type="submit" value="Crear cuenta">

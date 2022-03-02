@@ -17,31 +17,41 @@ passport.use(
     },
     async (req, email, password, done) => {
         try {
-        // Primero buscamos si el usuario existe en nuestra DB
-        const previousUser = await User.findOne({ email: email });
+            // Primero buscamos si el usuario existe en nuestra DB
+            const previousUser = await User.findOne({ email: email });
 
-        // Si hay usuario previamente, lanzamos un error
-        if (previousUser) {
-            const error = new Error('The user is already registered!');
-            return done(error);
-        }
+            // Si hay usuario previamente, lanzamos un error
+            if (previousUser) {
+                const error = new Error('The user is already registered!');
+                return done(error);
+            }
 
-        // Si no existe el usuario, vamos a "hashear" el password antes de registrarlo
-        const hash = await bcrypt.hash(password, saltRounds);
+            if (password != req.body.repeat_password) {
+                const error = new Error('Las contraseñas introducidas no coinciden');
+                return done(error);
+            }
 
-        // Creamos el nuevo user y lo guardamos en la DB
-        const newUser = new User({
-            email: email,
-            password: hash,
-        });
+            // Si no existe el usuario, vamos a "hashear" el password antes de registrarlo
+            const hash = await bcrypt.hash(password, saltRounds);
 
-        const savedUser = await newUser.save();
-        
-        // Invocamos el callback con null donde iría el error y el usuario creado
+            // Creamos el nuevo user y lo guardamos en la DB
+            const newUser = new User({
+                email: email,
+                password: hash,
+                repeat_password: req.body.repeat_password,
+                name: req.body.name,
+                surname: req.body.surname,
+                country: req.body.country,
+                phone_number: req.body.phone_number,
+            });
+
+            const savedUser = await newUser.save();
+            
+            // Invocamos el callback con null donde iría el error y el usuario creado
         done(null, savedUser);
         } catch (err) {
-        // Si hay un error, resolvemos el callback con el error
-        return done(err);
+            // Si hay un error, resolvemos el callback con el error
+            return done(err);
         }
     }
     )
@@ -57,7 +67,7 @@ passport.use(
         },
         async (req, email, password, done) => {
             try {
-            // Primero buscamos si el usuario existe en nuestra DB
+                // Primero buscamos si el usuario existe en nuestra DB
                 const currentUser = await User.findOne({ email: email });
 
                 // Si NO existe el usuario, tendremos un error...
@@ -66,13 +76,13 @@ passport.use(
                     return done(error);
                 }
 
-            // Si existe el usuario, vamos a comprobar si su password enviado coincide con el registrado
+                // Si existe el usuario, vamos a comprobar si su password enviado coincide con el registrado
                 const isValidPassword = await bcrypt.compare(
                     password,
                     currentUser.password
                 );
 
-            // Si el password no es correcto, enviamos un error a nuestro usuario
+                // Si el password no es correcto, enviamos un error a nuestro usuario
                 if (!isValidPassword) {
                     const error = new Error(
                         'The email & password combination is incorrect!'
@@ -95,7 +105,7 @@ passport.serializeUser((user, done) => {
     return done(null, user._id);
 });
 
-  // Esta función buscará un usuario dada su _id en la DB y populará req.user si existe
+// Esta función buscará un usuario dada su _id en la DB y populará req.user si existe
 passport.deserializeUser(function(id, done) {
     User.findById(id, function(err, user) {
         done(err, user);
