@@ -4,10 +4,16 @@ const Product = require('../models/Product');
 
 const router = express.Router();
 
-router.get('/', async (req, res, next) => {
+router.get('/:page', async (req, res, next) => {
     try {
-        const products = await Product.find();
-        return res.status(200).render('products', { title: 'Todos los productos', products });  
+        const page = req.params.page;
+        const limit = 10;
+        var currentPage = page;
+        const products = await Product.find()
+        .limit(limit * 1)
+        .skip((page - 1) * limit)
+        .exec();
+        return res.status(200).render('products', { title: 'Todos los productos', products, currentPage });  
     } catch (err) {
         next(err);
     }

@@ -25,8 +25,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
-hbs.registerHelper('uppercase', (str) => {
-    return str.toUpperCase();
+hbs.registerHelper('nextPage', (num) => {
+    return num +++ 1;
+});
+
+hbs.registerHelper('prevPage', (num) => {
+    return num - 1;
 });
 
 app.use(
