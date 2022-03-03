@@ -7,7 +7,7 @@ const router = express.Router();
 router.get('/', async (req, res, next) => {
     try {
         const products = await Product.find();
-        return res.status(200).render('products', { title: 'Upgrade products', products });  
+        return res.status(200).render('products', { title: 'Todos los productos', products });  
     } catch (err) {
         next(err);
     }
@@ -26,12 +26,22 @@ router.get('/:id', async (req, res, next) => {
     }
 });
 
-router.get('/search', async (req, res, next) => {
+router.post('/search', async (req, res, next) => {
     try {
-        const search = req.params.search;
-        console.log(search);
+        const search = req.body.search.charAt(0).toUpperCase() + req.body.search.slice(1);
         const products = await Product.find( {name: search});
-        return res.status(200).render('search', { title: 'Upgrade products', products });  
+        return res.status(200).render('products', { title: 'Productos que coinciden con su búsqueda', products });  
+    } catch (err) {
+        next(err);
+    }
+});
+
+router.post('/filter', async (req, res, next) => {
+    try {
+        const lowest_price = req.body.lowest_price;
+        const highest_price = req.body.highest_price;
+        const products = await Product.find( {price: { $gte: lowest_price, $lte: highest_price}});
+        return res.status(200).render('products', { title: 'Productos que coinciden con su búsqueda', products });  
     } catch (err) {
         next(err);
     }

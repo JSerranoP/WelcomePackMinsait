@@ -16,17 +16,22 @@
             <div class="header__links">
                 <a class="header__link" href="/register">Registrarse</a>
                 <a class="header__link" href="/login">Iniciar sesion</a>
-                <form class="header__link" action="/users/logout" method="POST">
-                    <input type="submit" value="Cerrar sesion"></input>
+                <form action="/users/logout" method="POST">
+                    <input class="header__link" type="submit" value="Cerrar sesion"></input>
                 </form>
             </div>
         </header>
         <div class="products">
-            <h1 class="products__title">Todos los productos</h1>
-            <form class="header__link" action="/products/search" method="GET">
-                    <input placeholder="Busque un producto" type="text" name="search"></input>
-                    <input type="submit" value="Buscar"></input>
+            <form class="products__form" action="/products/search" method="POST">
+                <input class="products__search-input" placeholder="Busque un producto" type="text" name="search"></input>
+                <input class="products__submit" type="submit" value="Buscar"></input>
             </form>
+            <form class="products__form" action="/products/filter" method="POST">
+                <input class="products__filter-input" placeholder="Precio más bajo" type="number" name="lowest_price"></input>
+                <input class="products__filter-input" placeholder="Precio más alto" type="number" name="highest_price"></input>
+                <input class="products__submit" type="submit" value="Filtrar"></input>
+            </form>
+            <h1 class="products__title"> {{title}} </h1>
             <ul class="products__list">
                 {{#each products}}
                 <a class="products__list-item" href="/products/{{ this.id }}">

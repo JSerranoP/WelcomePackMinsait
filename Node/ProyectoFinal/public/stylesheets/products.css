@@ -2,6 +2,50 @@
     margin: 20px;
 }
 
+.products__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.products__search-input {
+    width: 70%;
+    padding: 15px;
+    margin: 10px;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    font-size: 20px;
+}
+
+.products__filter-input {
+    width: 20%;
+    padding: 15px;
+    margin: 10px;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    font-size: 20px;
+}
+
+.products__submit {
+    width: 15%;
+    padding: 16px;
+    margin: 10px;
+    background: #f44336;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.products__submit:hover {
+    opacity: 1;
+}
+
 .products__title {
     text-align: center;
 }
