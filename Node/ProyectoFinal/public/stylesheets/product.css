@@ -1,0 +1,11 @@
+.product {
+    margin: 5rem;
+}
+
+.product__item-title {
+    font-weight: normal;
+}
+
+.product__item-title--bold {
+    font-weight: bold;
+}

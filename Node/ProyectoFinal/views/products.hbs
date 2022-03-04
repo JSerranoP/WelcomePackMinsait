@@ -4,9 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{{title}}</title>
-        <link rel="stylesheet" type="text/css" href="stylesheets/header.css"/>
-        <link rel="stylesheet" type="text/css" href="stylesheets/footer.css"/>
-        <link rel="stylesheet" type="text/css" href="stylesheets/products.css" />
+        <link rel="stylesheet" type="text/css" href="/stylesheets/header.css"/>
+        <link rel="stylesheet" type="text/css" href="/stylesheets/footer.css"/>
+        <link rel="stylesheet" type="text/css" href="/stylesheets/products.css" />
     </head>
 
     <body>
@@ -34,7 +34,7 @@
             <h1 class="products__title"> {{title}} </h1>
             <ul class="products__list">
                 {{#each products}}
-                <a class="products__list-item" href="/products/{{ this.id }}">
+                <a class="products__list-item" href="/products/id/{{ this.id }}">
                     <li>
                         <h3 class="products__list-item-title"><span class="products__list-item-title--bold">Nombre: </span>{{ this.name }}</h3>
                         <h3 class="products__list-item-title"><span class="products__list-item-title--bold">Precio: </span> {{ this.price }}</h3>

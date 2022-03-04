@@ -1,17 +1,39 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>{{title}}</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Producto</title>
+        <link rel="stylesheet" type="text/css" href="/stylesheets/header.css"/>
+        <link rel="stylesheet" type="text/css" href="/stylesheets/footer.css"/>
+        <link rel="stylesheet" type="text/css" href="/stylesheets/product.css"/>
     </head>
 
     <body>
-        <h1>El producto con id {{this.id}}</h1>
-        {{#if this.product}}
-            <h3>Name: {{ this.product.name }}</h3>
-            <h3>Price: {{ this.product.price }}</h3>
-            <h3>Description: {{ this.product.description }}</h3>
-            {{else}}
-                <h3>No hemos encontrado el producto que buscas!</h3>
-        {{/if}}
+        <header class="header">
+            <a href="/"><img class="header__logo" src="https://t4.ftcdn.net/jpg/03/43/35/09/360_F_343350922_HKl2JXHSwagbkT0okcJUVGn109yjKsjR.jpg" alt="logo"></a>
+            <h1 class="header__title">E-Commerce</h1>
+            <div class="header__links">
+                <a class="header__link" href="/register">Registrarse</a>
+                <a class="header__link" href="/login">Iniciar sesion</a>
+                <form action="/users/logout" method="POST">
+                    <input class="header__link" type="submit" value="Cerrar sesion"></input>
+                </form>
+            </div>
+        </header>
+        <div class="product">
+            <h1 class="product__title">El producto con id {{this.id}}</h1>
+            <hr>
+            {{#if this.product}}
+                <h3 class="product__item-title"><span class="product__item-title--bold">Nombre: </span>{{ this.product.name }}</h3>
+                <h3 class="product__item-title"><span class="product__item-title--bold">Precio: </span> {{ this.product.price }}</h3>
+                <h3 class="product__item-title"><span class="product__item-title--bold">Descripción: </span> {{ this.product.description }}</h3>
+                {{else}}
+                    <h3 class="producs__item-title">No hemos encontrado el producto que buscas!</h3>
+            {{/if}}
+        </div>
+        <footer class="footer">
+            <p class="footer__content">Copyright © Todos los derechos reservados. All rights reserved.</p>
+        </footer>
     </body>
 </html>

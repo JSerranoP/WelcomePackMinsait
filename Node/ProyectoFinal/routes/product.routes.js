@@ -19,7 +19,7 @@ router.get('/:page', async (req, res, next) => {
     }
 });
 
-router.get('/:id', async (req, res, next) => {
+router.get('/id/:id', async (req, res, next) => {
     try {
         const id = req.params.id;
         const product = await Product.findById(id);
