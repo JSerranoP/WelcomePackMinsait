@@ -32,7 +32,7 @@
     width: 15%;
     padding: 16px;
     margin: 10px;
-    background: #f44336;
+    background: #041676;
     border: none;
     color: white;
     text-align: center;
@@ -52,7 +52,7 @@
 
 .products__list {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto auto auto;
 }
 
 .products__list-item {
@@ -70,4 +70,8 @@
 
 .products__list-item-title--bold {
     font-weight: bold;
+}
+
+.products__navigation {
+    text-align: center;
 }

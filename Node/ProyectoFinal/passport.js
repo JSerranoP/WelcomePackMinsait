@@ -106,8 +106,11 @@ passport.serializeUser((user, done) => {
 });
 
 // Esta función buscará un usuario dada su _id en la DB y populará req.user si existe
-passport.deserializeUser(function(id, done) {
-    User.findById(id, function(err, user) {
-        done(err, user);
-    });
+passport.deserializeUser(async (userId, done)=>{
+    try {
+        const existingUser = User.findById(userId);
+        return done(null, existingUser);
+    } catch (err) {
+        return done(err);
+    }
 });

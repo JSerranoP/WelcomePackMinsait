@@ -1,37 +1,18 @@
-const express = require('express');
 require('./db.js');
-const passport = require('passport');
-require('./passport'); // Requerimos nuestro archivo de configuración
-const productRoutes = require('./routes/product.routes');
-const indexRoutes = require('./routes/index.routes');
-const userRouter = require('./routes/user.routes');
+const express = require('express');
 const path = require('path');
 const hbs = require('hbs');
+
+const passport = require('passport');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
+require('./passport');
 
 const PORT = 3000;
 const app = express();
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-
-app.use('/', indexRoutes);
-app.use('/products', productRoutes);
-app.use('/users', userRouter);
-
-app.use(express.static(path.join(__dirname, 'public')));
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
-
-hbs.registerHelper('nextPage', (num) => {
-    return num +++ 1;
-});
-
-hbs.registerHelper('prevPage', (num) => {
-    return num - 1;
-});
 
 app.use(
     session({
@@ -51,6 +32,15 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+const productRoutes = require('./routes/product.routes');
+const indexRoutes = require('./routes/index.routes');
+const userRouter = require('./routes/user.routes');
+app.use('/', indexRoutes);
+app.use('/products', productRoutes);
+app.use('/users', userRouter);
+
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Crearemos un middleware para cuando no encontremos la ruta que busquemos
 app.use('*', (req, res, next) => {
     const error = new Error('Route not found'); 
@@ -64,6 +54,19 @@ app.use((err, req, res, next) => {
         message: err.message || 'Unexpected error',
         status: err.status || 500,
     });
+});
+
+
+
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'hbs');
+
+hbs.registerHelper('nextPage', (num) => {
+    return num +++ 1;
+});
+
+hbs.registerHelper('prevPage', (num) => {
+    return num - 1;
 });
 
 app.listen(PORT, () => {
