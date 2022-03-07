@@ -42,6 +42,10 @@
     cursor: pointer;
 }
 
+.products__submit--wider {
+    width: 90%;
+}
+
 .products__submit:hover {
     opacity: 1;
 }

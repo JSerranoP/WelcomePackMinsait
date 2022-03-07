@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Carrito</title>
+        <link rel="stylesheet" type="text/css" href="/stylesheets/header.css"/>
+        <link rel="stylesheet" type="text/css" href="/stylesheets/footer.css"/>
+        <link rel="stylesheet" type="text/css" href="/stylesheets/cart.css"/>
+    </head>
+
+    <body>
+        <header class="header">
+            <a href="/"><img class="header__logo" src="https://t4.ftcdn.net/jpg/03/43/35/09/360_F_343350922_HKl2JXHSwagbkT0okcJUVGn109yjKsjR.jpg" alt="logo"></a>
+            <h1 class="header__title">E-Commerce</h1>
+            <div class="header__links">
+                <a class="header__link" href="/register">Registrarse</a>
+                <a class="header__link" href="/login">Iniciar sesion</a>
+                <form action="/users/logout" method="POST">
+                    <input class="header__link" type="submit" value="Cerrar sesion"></input>
+                </form>
+            </div>
+        </header>
+        <div class="cart">
+            <ul class="cart__list">
+                {{#each cartProducts}}
+                <li class="cart__list-item">
+                    <h3 class="cart__list-item-title"><span class="cart__list-item-title--bold">Nombre: </span>{{ this.name }}</h3>
+                    <h3 class="cart__list-item-title"><span class="cart__list-item-title--bold">Precio: </span> {{ this.price }}</h3>
+                    <h3 class="cart__list-item-title"><span class="cart__list-item-title--bold">Descripcion: </span> {{ this.description }}</h3>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        <footer class="footer">
+            <p class="footer__content">Copyright © Todos los derechos reservados. All rights reserved.</p>
+        </footer>
+    </body>
+</html>

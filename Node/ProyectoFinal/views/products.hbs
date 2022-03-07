@@ -19,6 +19,7 @@
                 <form action="/users/logout" method="POST">
                     <input class="header__link" type="submit" value="Cerrar sesion"></input>
                 </form>
+                <a class="header__link" href="/cart">Carrito</a>
             </div>
         </header>
         <div class="products">
@@ -39,6 +40,9 @@
                         <h3 class="products__list-item-title"><span class="products__list-item-title--bold">Nombre: </span>{{ this.name }}</h3>
                         <h3 class="products__list-item-title"><span class="products__list-item-title--bold">Precio: </span> {{ this.price }}</h3>
                         <h3 class="products__list-item-title"><span class="products__list-item-title--bold">Descripcion: </span> {{ this.description }}</h3>
+                        <form action="/cart/add-product/{{this.id}}" method="POST">
+                            <input class="products__submit products__submit--wider" type="submit"value="Añadir al carrito"></input>
+                        </form>
                     </li>
                 </a>
                 {{/each}}

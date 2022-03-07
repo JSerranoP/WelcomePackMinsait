@@ -1,0 +1,22 @@
+.cart__list {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.cart__list-item {
+    list-style: none;
+    margin: 30px;
+    padding: 50px;
+    border: 2px solid #f44336;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+.cart__list-item-title {
+    font-weight: normal;
+}
+
+.cart__list-item-title--bold {
+    font-weight: bold;
+}
