@@ -24,3 +24,21 @@
 .cart__list-item-title--bold {
     font-weight: bold;
 }
+
+.cart__delete {
+    width: 90%;
+    padding: 16px;
+    margin: 10px;
+    background: #041676;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.cart__delete:hover {
+    opacity: 1;
+}

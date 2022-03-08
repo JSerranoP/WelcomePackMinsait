@@ -40,7 +40,23 @@ router.post('/add-product/:productId', async (req, res, next) => {
             { new: true }
         );
 
-        return res.status(200).render('product-cart');
+        return res.status(200).render('product-cart', { title: 'Producto añadido con éxito al carrito'});
+    } catch (err) {
+        next(err);
+    }
+});
+
+router.post('/delete/:productId', async (req, res, next) => {
+    try {
+        const userId = req.session.passport.user;
+        const productId = req.params.productId;
+
+        const updatedCart = await Cart.findOneAndUpdate( {userId: userId},
+            { $pull: { products: productId } },
+            { new: true }
+        );
+
+        return res.status(200).render('product-cart', { title: 'Producto eliminado con éxito del carrito'});
     } catch (err) {
         next(err);
     }

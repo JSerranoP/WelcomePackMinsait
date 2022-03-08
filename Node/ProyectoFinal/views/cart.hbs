@@ -26,6 +26,9 @@
                     <h3 class="cart__list-item-title"><span class="cart__list-item-title--bold">Nombre: </span>{{ this.name }}</h3>
                     <h3 class="cart__list-item-title"><span class="cart__list-item-title--bold">Precio: </span> {{ this.price }} €</h3>
                     <h3 class="cart__list-item-title"><span class="cart__list-item-title--bold">Descripcion: </span> {{ this.description }}</h3>
+                    <form action="/cart/delete/{{this.id}}" method="POST">
+                        <input class="cart__delete" type="submit"value="Eliminar del carrito"></input>
+                    </form>
                 </li>
                 {{/each}}
             </ul>

@@ -43,7 +43,7 @@
                             <h3 class="products__list-item-title"><span class="products__list-item-title--bold">Precio: </span> {{ this.price }} €</h3>
                             <h3 class="products__list-item-title"><span class="products__list-item-title--bold">Descripcion: </span> {{ this.description }}</h3>
                         </div>
-                        <div style="bottom: 0;">
+                        <div>
                             <form action="/cart/add-product/{{this.id}}" method="POST">
                                 <input class="products__submit products__submit--wider" type="submit"value="Añadir al carrito"></input>
                             </form>
