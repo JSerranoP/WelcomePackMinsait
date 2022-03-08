@@ -43,8 +43,8 @@ passport.use(
 
             const savedUser = await newUser.save();
 
-            const existsCart = await Cart.find({userId: savedUser._id})
-            if( existsCart.length == 0 ){
+            const existsCart = await Cart.findOne({userId: savedUser._id})
+            if( !existsCart ){
                 const newCart = new Cart({
                     userId: savedUser._id,
                 });
@@ -88,8 +88,8 @@ passport.use(
                     return done(error);
                 }
 
-                const existsCart = await Cart.find({userId: currentUser._id})
-                if( existsCart.length == 0 ){
+                const existsCart = await Cart.findOne({userId: currentUser._id})
+                if( !existsCart ){
                     const newCart = new Cart({
                         userId: currentUser._id,
                     });
