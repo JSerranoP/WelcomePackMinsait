@@ -2,7 +2,7 @@ require('./db.js');
 const express = require('express');
 const path = require('path');
 const hbs = require('hbs');
-const methodOverride = require('method-override');
+const authMiddleware = require('./middlewares/auth.middleware');
 
 const passport = require('passport');
 const mongoose = require('mongoose');
@@ -38,13 +38,11 @@ const indexRoutes = require('./routes/index.routes');
 const userRouter = require('./routes/user.routes');
 const cartRouter = require('./routes/cart.routes');
 app.use('/', indexRoutes);
-app.use('/products', productRoutes);
+app.use('/products', [authMiddleware.isAuthenticated], productRoutes);
 app.use('/users', userRouter);
 app.use('/cart', cartRouter);
 
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use(methodOverride('_method'));
 
 // Crearemos un middleware para cuando no encontremos la ruta que busquemos
 app.use('*', (req, res, next) => {

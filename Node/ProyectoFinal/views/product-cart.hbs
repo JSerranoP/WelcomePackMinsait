@@ -12,6 +12,12 @@
     <body>
         <header class="header">
             <a href="/"><img class="header__logo" src="https://t4.ftcdn.net/jpg/03/43/35/09/360_F_343350922_HKl2JXHSwagbkT0okcJUVGn109yjKsjR.jpg" alt="logo"></a>
+            <div class="header__links">
+                <form action="/users/logout" method="POST">
+                    <input class="header__link" type="submit" value="Cerrar sesion"></input>
+                </form>
+                <a class="header__link" href="/cart">Carrito</a>
+            </div>
         </header>
         <div class="product-cart">
             <h1 class="product-cart__title">Producto añadido al carrito</h1>

@@ -34,3 +34,7 @@
     border: none;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+.header__link:hover {
+    opacity: 1;
+}

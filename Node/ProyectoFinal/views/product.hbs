@@ -14,11 +14,10 @@
             <a href="/"><img class="header__logo" src="https://t4.ftcdn.net/jpg/03/43/35/09/360_F_343350922_HKl2JXHSwagbkT0okcJUVGn109yjKsjR.jpg" alt="logo"></a>
             <h1 class="header__title">E-Commerce</h1>
             <div class="header__links">
-                <a class="header__link" href="/register">Registrarse</a>
-                <a class="header__link" href="/login">Iniciar sesion</a>
                 <form action="/users/logout" method="POST">
                     <input class="header__link" type="submit" value="Cerrar sesion"></input>
                 </form>
+                <a class="header__link" href="/cart">Carrito</a>
             </div>
         </header>
         <div class="product">
@@ -26,11 +25,12 @@
             <hr>
             {{#if this.product}}
                 <h3 class="product__item-title"><span class="product__item-title--bold">Nombre: </span>{{ this.product.name }}</h3>
-                <h3 class="product__item-title"><span class="product__item-title--bold">Precio: </span> {{ this.product.price }}</h3>
+                <h3 class="product__item-title"><span class="product__item-title--bold">Precio: </span> {{ this.product.price }} €</h3>
                 <h3 class="product__item-title"><span class="product__item-title--bold">Descripción: </span> {{ this.product.description }}</h3>
                 {{else}}
                     <h3 class="producs__item-title">No hemos encontrado el producto que buscas!</h3>
             {{/if}}
+            <a href="/products/1">Volver</a>
         </div>
         <footer class="footer">
             <p class="footer__content">Copyright © Todos los derechos reservados. All rights reserved.</p>

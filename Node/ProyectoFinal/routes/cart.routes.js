@@ -8,12 +8,10 @@ const router = express.Router();
 router.get('/', async (req, res, next) => {
     try {
         const userId = req.session.passport.user;
-        console.log(userId);
         const carts = await Cart.find( {userId: userId} ).populate('products');
-        console.log(carts[0].products);
         cartProducts = carts[0].products;
 
-        return res.status(200).render('cart', { title: 'Productos que coinciden con su búsqueda', cartProducts });  
+        return res.status(200).render('cart', { cartProducts });  
     } catch (err) {
         next(err);
     }
@@ -34,6 +32,12 @@ router.post('/create', async (req, res, next) => {
 
 router.post('/add-product/:productId', async (req, res, next) => {
     try {
+        const newCart = new Cart({
+            userId: req.session.passport.user,
+        });
+
+        const createdCart = await newCart.save();
+
         const userId = req.session.passport.user;
         const productId = req.params.productId;
 
