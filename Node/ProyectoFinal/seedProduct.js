@@ -136,28 +136,21 @@ const productDocuments = products.map(product => new Product(product));
 
 const DB_URL = 'mongodb://localhost:27017/proyecto_final';
 
-// En este caso, nos conectaremos de nuevo a nuestra base de datos
-// pero nos desconectaremos tras insertar los documentos
 mongoose
     .connect(DB_URL, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })
     .then(async () => {
-            // Utilizando Pet.find() obtendremos un array con todos los pets de la db
         const allProducts = await Product.find();
             
-            // Si existen pets previamente, dropearemos la colección
         if (allProducts.length) {
-        await Product.collection.drop();
+            await Product.collection.drop();
         }
     })
     .catch((err) => console.log(`Error deleting data: ${err}`))
     .then(async () => {
-            // Una vez vaciada la db de las mascotas, usaremos el array petDocuments
-            // para llenar nuestra base de datos con todas las mascotas.
             await Product.insertMany(productDocuments);
-        })
+    })
     .catch((err) => console.log(`Error creating data: ${err}`))
-        // Por último nos desconectaremos de la DB.
     .finally(() => mongoose.disconnect());

@@ -17,11 +17,11 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(
     session({
-        secret: 'upgradehub_node', // ¡Este secreto tendremos que cambiarlo en producción!
-        resave: false, // Solo guardará la sesión si hay cambios en ella.
-        saveUninitialized: false, // Lo usaremos como false debido a que gestionamos nuestra sesión con Passport
+        secret: 'upgradehub_node',
+        resave: false,
+        saveUninitialized: false,
         cookie: {
-            maxAge: 3600000, // Milisegundos de duración de nuestra cookie, en este caso será una hora.
+            maxAge: 3600000,
         },
         store: new MongoStore({ 
             mongooseConnection: mongoose.connection,
@@ -44,14 +44,12 @@ app.use('/cart', cartRouter);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Crearemos un middleware para cuando no encontremos la ruta que busquemos
 app.use('*', (req, res, next) => {
     const error = new Error('Route not found'); 
     error.status = 404;
-    next(error); // Lanzamos la función next() con un error
+    next(error);
 });
 
-// Si se lanza la función
 app.use((err, req, res, next) => {
     return res.status(err.status || 500).render('error', {
         message: err.message || 'Unexpected error',

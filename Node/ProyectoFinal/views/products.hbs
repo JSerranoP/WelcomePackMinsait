@@ -36,14 +36,18 @@
             <h1 class="products__title"> {{title}} </h1>
             <ul class="products__list">
                 {{#each products}}
-                <a class="products__list-item" href="/products/id/{{ this.id }}">
-                    <li>
-                        <h3 class="products__list-item-title"><span class="products__list-item-title--bold">Nombre: </span>{{ this.name }}</h3>
-                        <h3 class="products__list-item-title"><span class="products__list-item-title--bold">Precio: </span> {{ this.price }} €</h3>
-                        <h3 class="products__list-item-title"><span class="products__list-item-title--bold">Descripcion: </span> {{ this.description }}</h3>
-                        <form action="/cart/add-product/{{this.id}}" method="POST">
-                            <input class="products__submit products__submit--wider" type="submit"value="Añadir al carrito"></input>
-                        </form>
+                <a class="products__list-link" href="/products/id/{{ this.id }}">
+                    <li class="products__list-item">
+                        <div>
+                            <h3 class="products__list-item-title"><span class="products__list-item-title--bold">Nombre: </span>{{ this.name }}</h3>
+                            <h3 class="products__list-item-title"><span class="products__list-item-title--bold">Precio: </span> {{ this.price }} €</h3>
+                            <h3 class="products__list-item-title"><span class="products__list-item-title--bold">Descripcion: </span> {{ this.description }}</h3>
+                        </div>
+                        <div style="bottom: 0;">
+                            <form action="/cart/add-product/{{this.id}}" method="POST">
+                                <input class="products__submit products__submit--wider" type="submit"value="Añadir al carrito"></input>
+                            </form>
+                        </div>
                     </li>
                 </a>
                 {{/each}}

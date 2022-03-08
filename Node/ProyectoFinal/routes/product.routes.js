@@ -73,9 +73,9 @@ router.put('/edit', async (req, res, next) => {
         const id = req.body.id;
 
         const updatedProduct = await Product.findByIdAndUpdate(
-        id, // La id para encontrar el documento a actualizar
-        { name: req.body.name }, // Campos que actualizaremos
-        { new: true } // Usando esta opción, conseguiremos el documento actualizado cuando se complete el update
+        id, 
+        { name: req.body.name }, 
+        { new: true }
         );
 
         return res.status(200).json(updatedProduct);
