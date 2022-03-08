@@ -3,6 +3,7 @@ const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcrypt');
 
 const User = require('./models/User');
+const Cart = require('./models/Cart');
 
 // Creamos los salts de bcrypt
 const saltRounds = 10;
@@ -46,6 +47,14 @@ passport.use(
             });
 
             const savedUser = await newUser.save();
+
+            const existsCart = await Cart.find({userId: savedUser._id})
+            if( existsCart.length == 0 ){
+                const newCart = new Cart({
+                    userId: savedUser._id,
+                });
+                const createdCart = await newCart.save();
+            }
             
             // Invocamos el callback con null donde iría el error y el usuario creado
         done(null, savedUser);
@@ -88,6 +97,14 @@ passport.use(
                         'The email & password combination is incorrect!'
                     );
                     return done(error);
+                }
+
+                const existsCart = await Cart.find({userId: currentUser._id})
+                if( existsCart.length == 0 ){
+                    const newCart = new Cart({
+                        userId: currentUser._id,
+                    });
+                    const createdCart = await newCart.save();
                 }
 
                 // Si todo se valida correctamente, completamos el callback con el usuario

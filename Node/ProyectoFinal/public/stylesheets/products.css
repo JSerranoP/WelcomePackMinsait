@@ -18,6 +18,11 @@
     font-size: 20px;
 }
 
+.products__search-input:focus {
+    border: 1px solid #041676;
+    outline: none;
+}
+
 .products__filter-input {
     width: 20%;
     padding: 15px;
@@ -26,6 +31,11 @@
     border: none;
     background: #f1f1f1;
     font-size: 20px;
+}
+
+.products__filter-input:focus {
+    border: 1px solid #041676;
+    outline: none;
 }
 
 .products__submit {

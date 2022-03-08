@@ -32,12 +32,6 @@ router.post('/create', async (req, res, next) => {
 
 router.post('/add-product/:productId', async (req, res, next) => {
     try {
-        const newCart = new Cart({
-            userId: req.session.passport.user,
-        });
-
-        const createdCart = await newCart.save();
-
         const userId = req.session.passport.user;
         const productId = req.params.productId;
 
